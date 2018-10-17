@@ -1,7 +1,7 @@
 {
   "main.css": "/Innovate-The-Future/static/css/main.0737d465.chunk.css",
-  "main.js": "/Innovate-The-Future/static/js/main.fa8cd660.chunk.js",
-  "main.js.map": "/Innovate-The-Future/static/js/main.fa8cd660.chunk.js.map",
+  "main.js": "/Innovate-The-Future/static/js/main.8f7a4d9b.chunk.js",
+  "main.js.map": "/Innovate-The-Future/static/js/main.8f7a4d9b.chunk.js.map",
   "static/css/1.48569963.chunk.css": "/Innovate-The-Future/static/css/1.48569963.chunk.css",
   "static/js/1.12a06635.chunk.js": "/Innovate-The-Future/static/js/1.12a06635.chunk.js",
   "static/js/1.12a06635.chunk.js.map": "/Innovate-The-Future/static/js/1.12a06635.chunk.js.map",
@@ -9,9 +9,9 @@
   "runtime~main.js.map": "/Innovate-The-Future/static/js/runtime~main.8a3954aa.js.map",
   "static/media/index.css": "/Innovate-The-Future/static/media/roboto-latin-900italic.bc833e72.woff",
   "static/media/IF-Banner.png": "/Innovate-The-Future/static/media/IF-Banner.b83a24c2.png",
-  "static/css/main.0737d465.chunk.css.map": "/Innovate-The-Future/static/css/main.0737d465.chunk.css.map",
   "static/css/1.48569963.chunk.css.map": "/Innovate-The-Future/static/css/1.48569963.chunk.css.map",
+  "static/css/main.0737d465.chunk.css.map": "/Innovate-The-Future/static/css/main.0737d465.chunk.css.map",
   "index.html": "/Innovate-The-Future/index.html",
-  "precache-manifest.a9752694f6c5d0f03856646b04e187f1.js": "/Innovate-The-Future/precache-manifest.a9752694f6c5d0f03856646b04e187f1.js",
+  "precache-manifest.70f55d883d5564a8c5204033460a9fb8.js": "/Innovate-The-Future/precache-manifest.70f55d883d5564a8c5204033460a9fb8.js",
   "service-worker.js": "/Innovate-The-Future/service-worker.js"
 }
