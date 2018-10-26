@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 import { withStyles } from "@material-ui/core/styles"
@@ -7,6 +8,23 @@ import CardContent from "@material-ui/core/CardContent"
 import Button from "@material-ui/core/Button"
 import Typography from "@material-ui/core/Typography"
 import CssBaseline from "@material-ui/core/CssBaseline"
+=======
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core/styles";
+import Card from "@material-ui/core/Card";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
+import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
+
+import IconButton from "@material-ui/core/IconButton";
+
+import Instagram from "mdi-material-ui/Instagram";
+import Facebook from "mdi-material-ui/Facebook";
+import Twitter from "mdi-material-ui/Twitter";
+import Snapchat from "mdi-material-ui/Snapchat";
+>>>>>>> 70103bd62173fba374f2410cf5388d7a5ac81e6f
 
 const styles = {
   card: {
@@ -23,17 +41,25 @@ const styles = {
   pos1: {
     marginBottom: 25
   }
-}
+};
 
 function Contact(props) {
-  const { classes } = props
+  const { classes } = props;
 
   return (
     <div className={classes.root} align="center">
       <CssBaseline />
       <Card className={classes.card}>
         <CardContent>
+<<<<<<< HEAD
           <Typography className={classes.title} color="textPrimary" gutterBottom>
+=======
+          <Typography
+            className={classes.title}
+            color="textSecondary"
+            gutterBottom
+          >
+>>>>>>> 70103bd62173fba374f2410cf5388d7a5ac81e6f
             Contact Information
           </Typography>
           <Typography className={classes.pos} color="textPrimary">
@@ -57,14 +83,50 @@ function Contact(props) {
           <Typography className={classes.pos} color="textPrimary">
             Social Media
           </Typography>
-          <Typography className={classes.pos1} variant="h5" component="h2">
+
+          <div>
+            <IconButton
+              title="Visit our Facebook Page"
+              color="primary"
+              href="http://www.facebook.com"
+            >
+              <Facebook />
+            </IconButton>
+
+            <IconButton
+              title="See our Instagram"
+              color="primary"
+              href="https://www.instagram.com/innovatethefuture/"
+            >
+              <Instagram />
+            </IconButton>
+
+            <IconButton
+              title="See our Twitter"
+              color="primary"
+              href="http://www.twitter.com"
+            >
+              <Twitter />
+            </IconButton>
+
+            <IconButton
+              title="See our Snapchat"
+              color="primary"
+              href="http://www.snapchat.com"
+            >
+              <Snapchat />
+            </IconButton>
+          </div>
+
+          {/* <Typography className={classes.pos1} variant="h5" component="h2">
             facebook twitter insta slack
-          </Typography>
+          </Typography> */}
+          {/*Connect FB twitter insta and slack to the buttons. Remember that we are using material UI*/}
           {/* will add proper social media buttons later */}
         </CardContent>
       </Card>
     </div>
-  )
+  );
 }
 
-export default withStyles(styles)(Contact)
+export default withStyles(styles)(Contact);
