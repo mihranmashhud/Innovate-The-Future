@@ -16,7 +16,7 @@ import Snapchat from "mdi-material-ui/Snapchat"
 
 const styles = {
   card: {
-    minWidth: 275,
+    maxWidth: 500,
     width: "90%",
     margin: 50
   },
@@ -65,28 +65,22 @@ function Contact(props) {
           </Typography>
 
           <div>
-            <IconButton title="Visit our Facebook Page" color="primary" href="http://www.facebook.com">
+            <IconButton title="Visit our Facebook Page" color="white" href="http://www.facebook.com">
               <Facebook />
             </IconButton>
 
-            <IconButton title="See our Instagram" color="primary" href="https://www.instagram.com/innovatethefuture/">
+            <IconButton title="See our Instagram" color="white" href="https://www.instagram.com/innovatethefuture/">
               <Instagram />
             </IconButton>
 
-            <IconButton title="See our Twitter" color="primary" href="http://www.twitter.com">
+            <IconButton title="See our Twitter" color="white" href="http://www.twitter.com">
               <Twitter />
             </IconButton>
 
-            <IconButton title="See our Snapchat" color="primary" href="http://www.snapchat.com">
+            <IconButton title="See our Snapchat" color="white" href="http://www.snapchat.com">
               <Snapchat />
             </IconButton>
           </div>
-
-          {/* <Typography className={classes.pos1} variant="h5" component="h2">
-            facebook twitter insta slack
-          </Typography> */}
-          {/*Connect FB twitter insta and slack to the buttons. Remember that we are using material UI*/}
-          {/* will add proper social media buttons later */}
         </CardContent>
       </Card>
     </div>
