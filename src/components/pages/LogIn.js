@@ -40,13 +40,12 @@ const styles = theme => ({
     alignItems: "center",
     padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 3}px ${theme.spacing.unit * 3}px`
   },
-  avatar: {
-    margin: theme.spacing.unit,
-    backgroundColor: theme.palette.secondary.main
-  },
   form: {
     width: "100%",
     marginTop: theme.spacing.unit
+  },
+  formControl: {
+    color: theme.palette.secondary.main
   },
   submit: {
     marginTop: theme.spacing.unit * 3
@@ -55,7 +54,16 @@ const styles = theme => ({
     marginTop: theme.spacing.unit * 2
   },
   link: {
-    color: "blue"
+    color: theme.palette.secondary.main
+  },
+  checkRoot: {
+    color: theme.palette.secondary.main,
+    "&$checked": {
+      color: theme.palette.secondary.light
+    }
+  },
+  inputRoot: {
+    color: theme.palette.secondary.main
   }
 })
 
@@ -84,17 +92,61 @@ class LogIn extends Component {
 
             <form className={classes.form}>
               <FormControl margin="normal" fullWidth>
-                <InputLabel htmlFor="email">Email Address</InputLabel>
-                <Input id="email" name="email" autoComplete="email" autoFocus />
+                <InputLabel
+                  htmlFor="email"
+                  classes={{
+                    root: classes.inputRoot
+                  }}
+                >
+                  Email Address
+                </InputLabel>
+                <Input
+                  id="email"
+                  name="email"
+                  autoComplete="email"
+                  autoFocus
+                  classes={{
+                    root: classes.inputRoot
+                  }}
+                />
               </FormControl>
 
               <FormControl margin="normal" fullWidth>
-                <InputLabel htmlFor="password">Password</InputLabel>
-                <Input name="password" type="password" id="password" autoComplete="current-password" />
+                <InputLabel
+                  htmlFor="password"
+                  classes={{
+                    root: classes.inputRoot
+                  }}
+                >
+                  Password
+                </InputLabel>
+                <Input
+                  name="password"
+                  type="password"
+                  id="password"
+                  autoComplete="current-password"
+                  classes={{
+                    root: classes.inputRoot
+                  }}
+                />
               </FormControl>
 
-              <FormControlLabel control={<Checkbox value="remember" color="primary" />} label="Remember me" />
-              <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit} onClick={this.props.signInWithEmail}>
+              <FormControlLabel
+                classes={{
+                  root: classes.inputRoot
+                }}
+                control={
+                  <Checkbox
+                    value="remember"
+                    classes={{
+                      root: classes.checkRoot,
+                      checked: classes.checked
+                    }}
+                  />
+                }
+                label="Remember me"
+              />
+              <Button type="submit" fullWidth variant="contained" color="secondary" className={classes.submit} onClick={this.props.signInWithEmailAndPassword}>
                 <StyledLink to="/Apply">Log In</StyledLink>
               </Button>
             </form>
@@ -106,16 +158,16 @@ class LogIn extends Component {
               Or sign up with the methods below.
             </Typography>
             <div>
-              <IconButton color="primary" onClick={this.props.signInWithGoogle} aria-label="GoogleOAuth">
+              <IconButton color="secondary" onClick={this.props.signInWithGoogle} aria-label="GoogleOAuth">
                 <Google />
               </IconButton>
-              <IconButton color="primary" onClick={this.props.signInWithGithub}>
+              <IconButton color="secondary" onClick={this.props.signInWithGithub}>
                 <GithubCircle />
               </IconButton>
-              <IconButton color="primary" onClick={this.props.signInWithFacebook}>
+              <IconButton color="secondary" onClick={this.props.signInWithFacebook}>
                 <Facebook />
               </IconButton>
-              <IconButton color="primary" onClick={this.props.signInWithTwitter}>
+              <IconButton color="secondary" onClick={this.props.signInWithTwitter}>
                 <Twitter />
               </IconButton>
             </div>

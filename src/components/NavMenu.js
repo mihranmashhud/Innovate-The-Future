@@ -23,11 +23,10 @@ class NavMenu extends React.Component {
 
     return (
       <div>
-        <IconButton aria-owns={anchorEl ? "nav-menu" : null} aria-haspopup="true" color="inherit" onClick={this.handleClick}>
+        <IconButton aria-owns={anchorEl ? "nav-menu" : null} aria-haspopup="true" color="white" onClick={this.handleClick}>
           <MenuIcon />
         </IconButton>
         <Menu id="nav-menu" color="inherit" anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={this.handleClose}>
-        
           <StyledLink to="/Log-In">
             <MenuItem onClick={this.handleClose}>Apply</MenuItem>
           </StyledLink>

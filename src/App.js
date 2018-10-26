@@ -17,11 +17,34 @@ import { fetchUser } from "./actions"
 
 const theme = createMuiTheme({
   palette: {
+    type: "dark",
     primary: {
-      main: "#000759"
+      light: "#030514",
+      main: "#2d2f3a",
+      dark: "#ffffff",
+      contrastText: "#fff"
     },
     secondary: {
-      main: "#0cf7f7"
+      main: "#00e5ff",
+      constrastText: "#000"
+    },
+    text: {
+      primary: "#fff",
+      secondary: "#000",
+      disabled: "#fefefe",
+      hint: "#fefefe"
+    },
+    background: {
+      default: "#2d2f3a",
+      paper: "#030514"
+    },
+    action: {
+      active: "rgba(255, 255, 255, 0.54)",
+      hover: "rgba(255, 255, 255, 0.08)",
+      hoverOpacity: 0.08,
+      selected: "rgba(255, 255, 255, 0.14)",
+      disabled: "rgba(255, 255, 255, 0.26)",
+      disabledBackground: "rgba(255, 255, 255, 0.12)"
     }
   }
 })

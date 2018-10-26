@@ -11,7 +11,7 @@ import Hidden from "@material-ui/core/Hidden"
 import StyledLink from "./Styled-Link"
 import NavMenu from "./NavMenu"
 
-const styles = {
+const styles = theme => ({
   root: {
     flexGrow: 1
   },
@@ -21,22 +21,25 @@ const styles = {
   menuButton: {
     marginLeft: -12,
     marginRight: 20
+  },
+  appBar: {
+    color: theme.palette.primary.dark
   }
-}
+})
 
 function Navigation(props) {
   const { classes } = props
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" color="#010101">
         <Toolbar>
           <Hidden smDown>
-            <Typography variant="h6" color="inherit" className={classes.grow}>
+            <Typography variant="h5" color="white" className={classes.grow}>
               <StyledLink to="/">Innovate The Future</StyledLink>
             </Typography>
           </Hidden>
           <Hidden mdUp>
-            <Typography variant="h6" color="inherit" className={classes.grow}>
+            <Typography variant="h5" color="white" className={classes.grow}>
               <StyledLink to="/">I.F.</StyledLink>
             </Typography>
           </Hidden>

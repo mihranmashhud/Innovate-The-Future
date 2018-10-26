@@ -6,6 +6,7 @@ import CardActions from "@material-ui/core/CardActions"
 import CardContent from "@material-ui/core/CardContent"
 import Button from "@material-ui/core/Button"
 import Typography from "@material-ui/core/Typography"
+import CssBaseline from "@material-ui/core/CssBaseline"
 
 const styles = {
   card: {
@@ -29,30 +30,31 @@ function Contact(props) {
 
   return (
     <div className={classes.root} align="center">
+      <CssBaseline />
       <Card className={classes.card}>
         <CardContent>
-          <Typography className={classes.title} color="textSecondary" gutterBottom>
+          <Typography className={classes.title} color="textPrimary" gutterBottom>
             Contact Information
           </Typography>
-          <Typography className={classes.pos} color="textSecondary">
+          <Typography className={classes.pos} color="textPrimary">
             Phone Number
           </Typography>
           <Typography className={classes.pos1} variant="h5" component="h2">
             123-456-7890
           </Typography>
-          <Typography className={classes.pos} color="textSecondary">
+          <Typography className={classes.pos} color="textPrimary">
             Email
           </Typography>
           <Typography className={classes.pos1} variant="h5" component="h2">
             if@if.com
           </Typography>
-          <Typography className={classes.pos} color="textSecondary">
+          <Typography className={classes.pos} color="textPrimary">
             Address
           </Typography>
           <Typography className={classes.pos1} variant="h5" component="h2">
             Turner Fenton Secondary School
           </Typography>
-          <Typography className={classes.pos} color="textSecondary">
+          <Typography className={classes.pos} color="textPrimary">
             Social Media
           </Typography>
           <Typography className={classes.pos1} variant="h5" component="h2">
