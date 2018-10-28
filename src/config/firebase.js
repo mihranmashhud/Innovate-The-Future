@@ -13,8 +13,8 @@ export const getApplication = user => {
   return application
 }
 
-export const updateApplication = (user, questions) => {
-  let model = applicationModel(user.uid, user.email, questions)
+export const updateApplication = (user, questions, submitted) => {
+  let model = applicationModel(user.uid, user.email, questions, submitted)
   return database.ref("/" + user.uid).set(model)
 }
 

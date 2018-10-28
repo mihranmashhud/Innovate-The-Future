@@ -21,11 +21,11 @@ export const loadUserApplication = user => dispatch => {
     })
 }
 
-export const updateUserApplication = (user, questions) => dispatch => {
+export const updateUserApplication = (user, questions, submitted = false) => dispatch => {
   dispatch({
     type: actionType.UPDATE_APPLICATION_REQUEST
   })
-  updateApplication(user, questions)
+  updateApplication(user, questions, submitted)
     .then(res => {
       loadUserApplication(user)(dispatch)
       dispatch({
