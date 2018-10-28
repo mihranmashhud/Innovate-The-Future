@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import FormControl from "@material-ui/core/FormControl"
 import InputLabel from "@material-ui/core/InputLabel"
-import Input from "@material-ui/core/Input"
+import FilledInput from "@material-ui/core/FilledInput"
 import withStyles from "@material-ui/core/styles/withStyles"
 
 const styles = theme => ({
@@ -13,12 +13,12 @@ const styles = theme => ({
   },
   cssFocused: {}
 })
-class TextForm extends Component {
+class LongAnswer extends Component {
   render() {
     const { classes } = this.props
     return (
       <div>
-        <FormControl margin="normal" required={this.props.required} fullWidth>
+        <FormControl margin="normal" required={this.props.required} fullWidth variant="filled">
           <InputLabel
             htmlFor={this.props.label}
             FormLabelClasses={{
@@ -28,10 +28,12 @@ class TextForm extends Component {
           >
             {this.props.label}
           </InputLabel>
-          <Input
+          <FilledInput
             id={this.props.id}
             name={this.props.label}
-            autoComplete={this.props.autoComplete}
+            autoComplete="null"
+            multiline
+            rows={this.props.rows}
             classes={{
               root: classes.inputRoot
             }}
@@ -42,4 +44,4 @@ class TextForm extends Component {
   }
 }
 
-export default withStyles(styles)(TextForm)
+export default withStyles(styles)(LongAnswer)
