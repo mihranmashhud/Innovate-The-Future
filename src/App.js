@@ -63,7 +63,7 @@ class App extends Component {
           {/* <Route path='/Event-Scope' component={Scope}></Route> */}
           <Route path="/Example-Projects" component={Example} />
           <Route path="/Contact-Us" component={Contact} />
-          <Route exact path="/Log-In" component={LogIn} />
+          <Route path="/Log-In" component={LogIn} />
           <Route path="/Sign-Up" component={SignUp} />
           <Route path="/Apply" component={requireAuth(Apply)} />
         </Switch>

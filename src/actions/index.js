@@ -2,11 +2,11 @@ import { authRef, provider } from "../config/firebase"
 import actionType from "./types"
 import { getApplication, updateApplication } from "./../config/firebase"
 
-export const loadUserApplication = () => dispatch => {
+export const loadUserApplication = user => dispatch => {
   dispatch({
     type: actionType.LOAD_APPLICATION_REQUEST
   })
-  getApplication()
+  getApplication(user)
     .then(application => {
       dispatch({
         type: actionType.LOAD_APPLICATION_SUCCESS,
@@ -21,18 +21,19 @@ export const loadUserApplication = () => dispatch => {
     })
 }
 
-export const updateUserApplication = questions => dispatch => {
+export const updateUserApplication = (user, questions) => dispatch => {
   dispatch({
     type: actionType.UPDATE_APPLICATION_REQUEST
   })
-  updateApplication(questions)
+  updateApplication(user, questions)
     .then(res => {
-      loadUserApplication()(dispatch)
+      loadUserApplication(user)(dispatch)
       dispatch({
         type: actionType.UPDATE_APPLICATION_SUCCESS
       })
     })
     .catch(error => {
+      console.log(error)
       dispatch({
         type: actionType.UPDATE_APPLICATION_FAILED,
         payload: error

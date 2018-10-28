@@ -8,13 +8,19 @@ const database = firebase.database()
 
 export const authRef = firebase.auth()
 
-export const getApplication = () => database.ref(`/${firebase.User.uid}`).once("value")
+export const getApplication = user => {
+  let application = database.ref(`/${user.uid}`).once("value")
+  return application
+}
 
-export const updateApplication = questions => {
-  let userId = firebase.User.uid
-  let email = firebase.User.email
-  let model = applicationModel(userId, email, questions)
-  return database.ref("/" + userId).set(model)
+export const updateApplication = (user, questions) => {
+  let model = applicationModel(user.uid, user.email, questions)
+  return database.ref("/" + user.uid).set(model)
+}
+
+export const submitApplication = (user, questions) => {
+  let model = applicationModel(user.uid, user.email, questions, true)
+  return database.ref(`/${user.uid}`).set(model)
 }
 
 export const provider = {
