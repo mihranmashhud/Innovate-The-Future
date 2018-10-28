@@ -1,4 +1,4 @@
-export default (userId, name, questions, submitted = false) => ({
+export default (userId, name, questions, submitted) => ({
   id: userId,
   name: name,
   questions: questions,

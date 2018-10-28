@@ -36,6 +36,8 @@ class TextForm extends Component {
               root: classes.inputRoot
             }}
             onChange={this.props.onChange}
+            value={this.props.value}
+            readOnly={this.props.readOnly}
           />
         </FormControl>
       </div>
