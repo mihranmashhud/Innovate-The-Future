@@ -1,35 +1,55 @@
-import { applicationRef, authRef, provider } from "../config/firebase"
-import { FETCH_APPLICATION, FETCH_USER } from "./types"
+import { authRef, provider } from "../config/firebase"
+import actionType from "./types"
+import { getApplication, updateApplication } from "./../config/firebase"
 
-export const updateApplication = updatedApplication => async dispatch => {
-  applicationRef.set(updatedApplication)
-}
-
-export const submitApplication = submission => async dispatch => {
-  applicationRef.set(Object.assign(submission, { submitted: true }))
-}
-
-export const checkIfSubmitted = () => async dispatch => applicationRef.submitted
-
-export const fetchApplication = () => async dispatch => {
-  applicationRef.on("value", snapshot => {
-    dispatch({
-      type: FETCH_APPLICATION,
-      payload: snapshot.val()
-    })
+export const loadUserApplication = () => dispatch => {
+  dispatch({
+    type: actionType.LOAD_APPLICATION_REQUEST
   })
+  getApplication()
+    .then(application => {
+      dispatch({
+        type: actionType.LOAD_APPLICATION_SUCCESS,
+        payload: application.val()
+      })
+    })
+    .catch(error => {
+      dispatch({
+        type: actionType.LOAD_APPLICATION_FAILED,
+        payload: error
+      })
+    })
+}
+
+export const updateUserApplication = questions => dispatch => {
+  dispatch({
+    type: actionType.UPDATE_APPLICATION_REQUEST
+  })
+  updateApplication(questions)
+    .then(res => {
+      loadUserApplication()(dispatch)
+      dispatch({
+        type: actionType.UPDATE_APPLICATION_SUCCESS
+      })
+    })
+    .catch(error => {
+      dispatch({
+        type: actionType.UPDATE_APPLICATION_FAILED,
+        payload: error
+      })
+    })
 }
 
 export const fetchUser = () => dispatch => {
   authRef.onAuthStateChanged(user => {
     if (user) {
       dispatch({
-        type: FETCH_USER,
+        type: actionType.FETCH_USER,
         payload: user
       })
     } else {
       dispatch({
-        type: FETCH_USER,
+        type: actionType.FETCH_USER,
         payload: null
       })
     }
