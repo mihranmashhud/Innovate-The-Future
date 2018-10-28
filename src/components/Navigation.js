@@ -34,12 +34,12 @@ function Navigation(props) {
       <AppBar position="static" color="primary">
         <Toolbar>
           <Hidden smDown>
-            <Typography variant="h5" color="white" className={classes.grow}>
+            <Typography variant="h5" color="textPrimary" className={classes.grow}>
               <StyledLink to="/">Innovate The Future</StyledLink>
             </Typography>
           </Hidden>
           <Hidden mdUp>
-            <Typography variant="h5" color="white" className={classes.grow}>
+            <Typography variant="h5" color="textPrimary" className={classes.grow}>
               <StyledLink to="/">IF</StyledLink>
             </Typography>
           </Hidden>

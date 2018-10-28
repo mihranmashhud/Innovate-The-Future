@@ -37,6 +37,7 @@ class LongAnswer extends Component {
             classes={{
               root: classes.inputRoot
             }}
+            onChange={this.props.onChange}
           />
         </FormControl>
       </div>

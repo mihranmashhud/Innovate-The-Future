@@ -31,10 +31,11 @@ class TextForm extends Component {
           <Input
             id={this.props.id}
             name={this.props.label}
-            autoComplete={this.props.autoComplete}
+            autoComplete={this.props.label}
             classes={{
               root: classes.inputRoot
             }}
+            onChange={this.props.onChange}
           />
         </FormControl>
       </div>

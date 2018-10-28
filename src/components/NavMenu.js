@@ -20,24 +20,41 @@ class NavMenu extends React.Component {
     this.setState({ anchorEl: null })
   }
 
+  signOut = () => {
+    this.handleClose()
+    this.props.signOut()
+  }
+
   render() {
     const { anchorEl } = this.state
-    let signOut
+    let logOut
+    let logIn
+    let apply
 
     if (this.props.authenticated) {
-      signOut = <MenuItem onClick={this.signOut}>Sign Out</MenuItem>
+      apply = (
+        <StyledLink to="/Apply">
+          <MenuItem onClick={this.handleClose}>Your Application</MenuItem>
+        </StyledLink>
+      )
+      logOut = <MenuItem onClick={this.signOut}>Sign Out</MenuItem>
+    } else {
+      logIn = (
+        <StyledLink to="/Log-In">
+          <MenuItem onClick={this.handleClose}>Log In</MenuItem>
+        </StyledLink>
+      )
     }
 
     return (
       <div>
-        <IconButton aria-owns={anchorEl ? "nav-menu" : null} aria-haspopup="true" color="white" onClick={this.handleClick}>
+        <IconButton aria-owns={anchorEl ? "nav-menu" : null} aria-haspopup="true" color="secondary" onClick={this.handleClick}>
           <MenuIcon />
         </IconButton>
         <Menu id="nav-menu" color="inherit" anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={this.handleClose}>
-          <StyledLink to="/Apply">
-            <MenuItem onClick={this.handleClose}>Apply</MenuItem>
-          </StyledLink>
-
+          {logIn}
+          {apply}
+          {logOut}
           <StyledLink to="/About-Us">
             <MenuItem onClick={this.handleClose}>About Us</MenuItem>
           </StyledLink>
@@ -53,7 +70,6 @@ class NavMenu extends React.Component {
           <StyledLink to="/Contact-Us">
             <MenuItem onClick={this.handleClose}>Contact Us</MenuItem>
           </StyledLink>
-          {signOut}
         </Menu>
       </div>
     )
@@ -68,5 +84,5 @@ function mapStateToProps(state) {
 
 export default connect(
   mapStateToProps,
-  signOut
+  { signOut }
 )(NavMenu)
