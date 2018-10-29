@@ -6,10 +6,13 @@ import MenuIcon from "@material-ui/icons/Menu"
 import StyledLink from "./Styled-Link"
 import { connect } from "react-redux"
 import { signOut } from "../actions"
+import CloseIcon from "@material-ui/icons/Close"
+import Snackbar from "@material-ui/core/Snackbar"
 
 class NavMenu extends React.Component {
   state = {
-    anchorEl: null
+    anchorEl: null,
+    hasSignedOut: false
   }
 
   handleClick = event => {
@@ -20,13 +23,18 @@ class NavMenu extends React.Component {
     this.setState({ anchorEl: null })
   }
 
+  handleSnackbarClose = () => {
+    this.setState({ hasSignedOut: false })
+  }
+
   signOut = () => {
     this.handleClose()
     this.props.signOut()
+    this.setState({ hasSignedOut: true })
   }
 
   render() {
-    const { anchorEl } = this.state
+    const { anchorEl, hasSignedOut } = this.state
     let logOut
     let logIn
     let apply
@@ -71,6 +79,24 @@ class NavMenu extends React.Component {
             <MenuItem onClick={this.handleClose}>Contact Us</MenuItem>
           </StyledLink>
         </Menu>
+        <Snackbar
+          anchorOrigin={{
+            vertical: "bottom",
+            horizontal: "left"
+          }}
+          open={hasSignedOut}
+          autoHideDuration={6000}
+          onClose={this.handleSnackbarClose}
+          ContentProps={{
+            "aria-describedby": "message-id"
+          }}
+          message={<span id="message-id">You have been successfully signed out</span>}
+          action={[
+            <IconButton key="close" aria-label="Close" color="secondary" onClick={this.handleSnackbarClose}>
+              <CloseIcon />
+            </IconButton>
+          ]}
+        />
       </div>
     )
   }

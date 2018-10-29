@@ -31,7 +31,7 @@ function Navigation(props) {
   const { classes } = props
   return (
     <div className={classes.root}>
-      <AppBar position="static" color="primary">
+      <AppBar position="static" color="primaryDark">
         <Toolbar>
           <Hidden smDown>
             <Typography variant="h5" color="textPrimary" className={classes.grow}>

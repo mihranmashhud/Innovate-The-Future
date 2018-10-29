@@ -64,11 +64,34 @@ const styles = theme => ({
   },
   checked: {},
   inputRoot: {
-    color: theme.palette.secondary.main
-  }
+    color: theme.palette.secondary.main,
+    "&$inputFocused": {
+      color: theme.palette.secondary.main
+    }
+  },
+  inputFocused: {}
 })
 
 class LogIn extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      email: "",
+      password: ""
+    }
+  }
+
+  handleChange = id => event => {
+    event.persist()
+    this.setState({
+      [id]: event.target.value
+    })
+  }
+
+  signInWithEmailAndPassword = () => {
+    this.props.signInWithEmailAndPassword(this.state.email, this.state.password)
+  }
+
   static contextTypes = {
     router: PropTypes.object
   }
@@ -95,8 +118,9 @@ class LogIn extends Component {
               <FormControl margin="normal" fullWidth>
                 <InputLabel
                   htmlFor="email"
-                  classes={{
-                    root: classes.inputRoot
+                  FormLabelClasses={{
+                    root: classes.inputRoot,
+                    focused: classes.inputFocused
                   }}
                 >
                   Email Address
@@ -106,6 +130,7 @@ class LogIn extends Component {
                   name="email"
                   autoComplete="email"
                   autoFocus
+                  onChange={this.handleChange("email")}
                   classes={{
                     root: classes.inputRoot
                   }}
@@ -115,8 +140,9 @@ class LogIn extends Component {
               <FormControl margin="normal" fullWidth>
                 <InputLabel
                   htmlFor="password"
-                  classes={{
-                    root: classes.inputRoot
+                  FormLabelClasses={{
+                    root: classes.inputRoot,
+                    focused: classes.inputFocused
                   }}
                 >
                   Password
@@ -126,6 +152,7 @@ class LogIn extends Component {
                   type="password"
                   id="password"
                   autoComplete="current-password"
+                  onChange={this.handleChange("password")}
                   classes={{
                     root: classes.inputRoot
                   }}
@@ -147,7 +174,7 @@ class LogIn extends Component {
                 }
                 label="Remember me"
               />
-              <Button type="submit" fullWidth variant="contained" color="secondary" className={classes.submit} onClick={this.props.signInWithEmailAndPassword}>
+              <Button type="submit" fullWidth variant="contained" color="secondary" className={classes.submit} onClick={this.signInWithEmailAndPassword}>
                 <StyledLink to="/Apply">Log In</StyledLink>
                 {/* Log In */}
               </Button>

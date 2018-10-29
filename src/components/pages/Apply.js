@@ -120,6 +120,7 @@ class Apply extends Component {
 
   render() {
     const { classes } = this.props
+    let submitted = this.props.application.submitted
 
     return (
       <div className={classes.layout} align="center">
@@ -131,24 +132,24 @@ class Apply extends Component {
           </Typography>
           <Grid container spacing={24} justify="center">
             <Grid item xs={12} sm={6} md={4} lg={3}>
-              <TextForm label={this.state.firstName.label} required id="first-name" onChange={this.handleChange("firstName")} value={this.state.firstName.value} readOnly={this.props.application.submitted} />
+              <TextForm label={this.state.firstName.label} required id="first-name" onChange={this.handleChange("firstName")} value={this.state.firstName.value} readOnly={submitted} />
             </Grid>
             <Grid item xs={12} sm={6} md={4} lg={3}>
-              <TextForm label={this.state.lastName.label} required id="last-name" onChange={this.handleChange("lastName")} value={this.state.lastName.value} readOnly={this.props.application.submitted} />
+              <TextForm label={this.state.lastName.label} required id="last-name" onChange={this.handleChange("lastName")} value={this.state.lastName.value} readOnly={submitted} />
             </Grid>
             <Grid item xs={12} sm={12} md={6}>
-              <TextForm label={this.state.email.label} required id="email" onChange={this.handleChange("email")} value={this.state.email.value} readOnly={this.props.application.submitted} />
+              <TextForm label={this.state.email.label} required id="email" onChange={this.handleChange("email")} value={this.state.email.value} readOnly={submitted} />
             </Grid>
             <Grid item xs={12}>
-              <LongAnswer label={this.state.question1.label} required rows={4} id="question1" onChange={this.handleChange("question1")} value={this.state.question1.value} readOnly={this.props.application.submitted} />
+              <LongAnswer label={this.state.question1.label} required rows={4} id="question1" onChange={this.handleChange("question1")} value={this.state.question1.value} readOnly={submitted} />
             </Grid>
             <Grid item xs={12} sm={6} md={4} lg={3}>
-              <Button type="submit" fullWidth variant="contained" color="secondary" className={classes.button} onClick={this.saveApplication} disabled={this.props.application.submitted}>
+              <Button type="submit" fullWidth variant="contained" color="secondary" className={classes.button} onClick={this.saveApplication} disabled={submitted}>
                 Save Application
               </Button>
             </Grid>
             <Grid item xs={12} sm={6} md={4} lg={3}>
-              <Button type="submit" fullWidth variant="contained" color="secondary" className={classes.button} onClick={this.submitApplication} disabled={this.props.application.submitted}>
+              <Button type="submit" fullWidth variant="contained" color="secondary" className={classes.button} onClick={this.submitApplication} disabled={submitted}>
                 Submit Application
               </Button>
             </Grid>
