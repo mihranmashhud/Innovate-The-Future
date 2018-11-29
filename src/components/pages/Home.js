@@ -1,14 +1,15 @@
-import React, { variant } from "react"
-import { Parallax } from "react-parallax"
-import Typography from "@material-ui/core/Typography"
-import Button from "@material-ui/core/Button"
-import { withStyles } from "@material-ui/core/styles"
-import PropTypes from "prop-types"
-import Card from "@material-ui/core/Card"
-import StyledLink from "../Styled-Link"
-import CardActions from "@material-ui/core/CardActions"
-import CardContent from "@material-ui/core/CardContent"
-import CssBaseline from "@material-ui/core/CssBaseline"
+import React, { variant } from "react";
+import { Parallax } from "react-parallax";
+import Typography from "@material-ui/core/Typography";
+import Button from "@material-ui/core/Button";
+import { withStyles } from "@material-ui/core/styles";
+import PropTypes from "prop-types";
+import Card from "@material-ui/core/Card";
+import StyledLink from "../Styled-Link";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import IFLogo from "./Home/IFLogo";
 
 const styles = theme => ({
   layout: {
@@ -19,7 +20,8 @@ const styles = theme => ({
     margin: "auto"
   },
   button: {
-    fontSize: "30px"
+    fontSize: "20px",
+    margin: "auto"
   },
   input: {
     display: "none"
@@ -43,43 +45,54 @@ const styles = theme => ({
     margin: "auto",
     marginTop: "20px"
   }
-})
+});
 
 function Home(props) {
-  const { classes } = props
+  const { classes } = props;
 
   return (
     <main className={classes.layout}>
       <CssBaseline />
       <Card className={classes.card} elevation={1}>
-        <Parallax bgImage={require("./../../assets/IF-Banner.png")} bgImageAlt="the cat" strength={300}>
-          <div style={{ height: "500px" }} />
+        <Parallax
+          bgImage={require(`./../../assets/${Math.random() < 0.5 ? "city-image-1.png" : "city-image.jpeg"}`)}
+          strength={500}
+          blur={3}>
+          <div
+            style={{
+              textAlign: "center"
+            }}>
+            <IFLogo width={"50%"} />
+          </div>
         </Parallax>
         <CardContent>
-          <Typography variant="h3" className={classes.title}>
+          <Typography variant='h4' className={classes.title}>
             Welcome to Innovate The Future
           </Typography>
-          <Typography variant="h4" className={classes.text} paragraph={true}>
-            Incididunt et exercitation esse labore cupidatat nulla. Amet commodo amet anim dolore elit ea Lorem adipisicing in. Cupidatat aliquip occaecat do consectetur fugiat ad mollit aliqua eu fugiat tempor amet esse ipsum. Pariatur officia mollit eu commodo tempor voluptate. Do sint cillum quis aute sit consequat incididunt.
+          <Typography variant='h5' className={classes.text} paragraph={true}>
+            Incididunt et exercitation esse labore cupidatat nulla. Amet commodo amet anim dolore elit ea Lorem
+            adipisicing in. Cupidatat aliquip occaecat do consectetur fugiat ad mollit aliqua eu fugiat tempor amet esse
+            ipsum. Pariatur officia mollit eu commodo tempor voluptate. Do sint cillum quis aute sit consequat
+            incididunt.
           </Typography>
         </CardContent>
         <CardActions>
           <div className={classes.buttons}>
-            <Button className={classes.button} color="secondary">
-              <StyledLink to="/Apply">Apply Now</StyledLink>
+            <Button className={classes.button} color='secondary'>
+              <StyledLink to='/Apply'>Apply Now</StyledLink>
             </Button>
-            <Button className={classes.button} color="secondary">
-              <StyledLink to="/Event-Scope">See The Scope</StyledLink>
+            <Button className={classes.button} color='secondary'>
+              <StyledLink to='/Event-Scope'>See The Scope</StyledLink>
             </Button>
           </div>
         </CardActions>
       </Card>
     </main>
-  )
+  );
 }
 
 Home.propTypes = {
   classes: PropTypes.object.isRequired
-}
+};
 
-export default withStyles(styles)(Home)
+export default withStyles(styles)(Home);

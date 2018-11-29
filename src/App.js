@@ -1,19 +1,19 @@
-import React, { Component } from "react"
-import Navigation from "./components/Navigation"
-import { Switch, Route, withRouter } from "react-router-dom"
-import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles"
+import React, { Component } from "react";
+import Navigation from "./components/Navigation";
+import { Switch, Route, withRouter } from "react-router-dom";
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
-import Home from "./components/pages/Home"
-import About from "./components/pages/About"
-import Scope from "./components/pages/Scope"
-import Example from "./components/pages/Example"
-import Contact from "./components/pages/Contact"
-import LogIn from "./components/pages/LogIn"
-import SignUp from "./components/pages/SignUp"
-import Apply from "./components/pages/Apply"
-import requireAuth from "./components/auth/requireAuth"
-import { connect } from "react-redux"
-import { fetchUser } from "./actions"
+import Home from "./components/pages/Home";
+import About from "./components/pages/About";
+import Scope from "./components/pages/Scope";
+import Example from "./components/pages/Example";
+import Contact from "./components/pages/Contact";
+import LogIn from "./components/pages/LogIn";
+import SignUp from "./components/pages/SignUp";
+import Apply from "./components/pages/Apply";
+import requireAuth from "./components/auth/requireAuth";
+import { connect } from "react-redux";
+import { fetchUser } from "./actions";
 
 const theme = createMuiTheme({
   palette: {
@@ -22,7 +22,7 @@ const theme = createMuiTheme({
       light: "#030514",
       main: "#2d2f3a",
       dark: "#ffffff",
-      contrastText: "#fff"
+      contrastText: "#000"
     },
     secondary: {
       main: "#00e5ff",
@@ -35,8 +35,8 @@ const theme = createMuiTheme({
       hint: "#fefefe"
     },
     background: {
-      default: "#2d2f3a",
-      paper: "#030514"
+      default: "#ddeeff",
+      paper: "#000000"
     },
     action: {
       active: "rgba(255, 255, 255, 0.54)",
@@ -47,10 +47,10 @@ const theme = createMuiTheme({
       disabledBackground: "rgba(255, 255, 255, 0.12)"
     }
   }
-})
+});
 class App extends Component {
   componentWillMount() {
-    this.props.fetchUser()
+    this.props.fetchUser();
   }
 
   render() {
@@ -58,17 +58,17 @@ class App extends Component {
       <MuiThemeProvider theme={theme}>
         <Navigation />
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/About-Us" component={About} />
-          {/* <Route path='/Event-Scope' component={Scope}></Route> */}
-          <Route path="/Example-Projects" component={Example} />
-          <Route path="/Contact-Us" component={Contact} />
-          <Route path="/Log-In" component={LogIn} />
-          <Route path="/Sign-Up" component={SignUp} />
-          <Route path="/Apply" component={requireAuth(Apply)} />
+          <Route exact path='/' component={Home} />
+          <Route path='/About-Us' component={About} />
+          <Route path='/Event-Scope' component={Scope} />
+          <Route path='/Example-Projects' component={Example} />
+          <Route path='/Contact-Us' component={Contact} />
+          <Route path='/Log-In' component={LogIn} />
+          <Route path='/Sign-Up' component={SignUp} />
+          <Route path='/Apply' component={requireAuth(Apply)} />
         </Switch>
       </MuiThemeProvider>
-    )
+    );
   }
 }
 
@@ -77,4 +77,4 @@ export default withRouter(
     null,
     { fetchUser }
   )(App)
-)
+);
