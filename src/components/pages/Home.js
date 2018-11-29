@@ -41,7 +41,9 @@ const styles = theme => ({
     textAlign: "center"
   },
   card: {
+    minWidth: "70%",
     maxWidth: "90%",
+    width: "600px",
     margin: "auto",
     marginTop: "20px"
   }
@@ -62,7 +64,7 @@ function Home(props) {
             style={{
               textAlign: "center"
             }}>
-            <IFLogo width={"50%"} />
+            <IFLogo width={"60%"} />
           </div>
         </Parallax>
         <CardContent>
