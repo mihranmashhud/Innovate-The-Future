@@ -2,7 +2,7 @@ import React, { variant } from "react";
 import { Parallax } from "react-parallax";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-import { withStyles } from "@material-ui/core/styles";
+import { withStyles, withTheme } from "@material-ui/core/styles";
 import PropTypes from "prop-types";
 import Card from "@material-ui/core/Card";
 import StyledLink from "../Styled-Link";
@@ -10,6 +10,7 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import IFLogo from "./Home/IFLogo";
+import { FormHelperText } from "@material-ui/core";
 
 const styles = theme => ({
   layout: {
@@ -53,11 +54,12 @@ function Home(props) {
   const { classes } = props;
 
   return (
-    <main className={classes.layout} class='wrapper'>
+    <main className={classes.layout}>
       <CssBaseline />
       <Card className={classes.card} elevation={1}>
         <Parallax
           bgImage={require(`./../../assets/${Math.random() < 0.5 ? "city-image-1.png" : "city-image.jpeg"}`)}
+          bgWidth={"100%"}
           strength={300}
           blur={3}>
           <div
@@ -67,6 +69,7 @@ function Home(props) {
             <IFLogo width={"60%"} />
           </div>
         </Parallax>
+
         <CardContent>
           <Typography variant='h4' className={classes.title}>
             Welcome to Innovate The Future
