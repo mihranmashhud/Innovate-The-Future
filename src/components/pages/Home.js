@@ -53,12 +53,12 @@ function Home(props) {
   const { classes } = props;
 
   return (
-    <main className={classes.layout}>
+    <main className={classes.layout} class='wrapper'>
       <CssBaseline />
       <Card className={classes.card} elevation={1}>
         <Parallax
           bgImage={require(`./../../assets/${Math.random() < 0.5 ? "city-image-1.png" : "city-image.jpeg"}`)}
-          strength={500}
+          strength={300}
           blur={3}>
           <div
             style={{
