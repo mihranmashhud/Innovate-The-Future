@@ -2,7 +2,7 @@ import React, { variant } from "react";
 import { Parallax } from "react-parallax";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-import { withStyles, withTheme } from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/core/styles";
 import PropTypes from "prop-types";
 import Card from "@material-ui/core/Card";
 import StyledLink from "../Styled-Link";

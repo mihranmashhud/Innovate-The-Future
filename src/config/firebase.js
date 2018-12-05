@@ -9,7 +9,7 @@ const database = firebase.database();
 export const authRef = firebase.auth();
 
 export const getApplication = user => {
-  let application = database.ref(`/${user.uid}`).once("value");
+  let application = database.ref(`/applications/${user.uid}`).once("value");
   return application;
 };
 
