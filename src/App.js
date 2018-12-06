@@ -3,12 +3,12 @@ import Navigation from "./components/Navigation";
 import { Switch, Route, withRouter } from "react-router-dom";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
-import Home from "./components/pages/Home";
+import Main from "./components/pages/Main";
 import About from "./components/pages/About";
 import Scope from "./components/pages/Scope";
 import Example from "./components/pages/Example";
 import Contact from "./components/pages/Contact";
-import LogIn from "./components/pages/LogIn";
+import SignIn from "./components/pages/SignIn";
 import SignUp from "./components/pages/SignUp";
 import Apply from "./components/pages/Apply";
 import requireAuth from "./components/auth/requireAuth";
@@ -58,13 +58,13 @@ class App extends Component {
       <MuiThemeProvider theme={theme}>
         <Navigation />
         <Switch>
-          <Route exact path='/' component={Home} />
-          <Route path='/About' component={About} />
+          <Route exact path='/' component={Main} />
+          {/* <Route path='/About' component={About} />
           <Route path='/Event-Scope' component={Scope} />
           <Route path='/Example-Projects' component={Example} />
-          <Route path='/Contact-Us' component={Contact} />
-          <Route path='/Log-In' component={LogIn} />
-          <Route path='/Sign-Up' component={SignUp} />
+          <Route path='/Contact-Us' component={Contact} /> */}
+          <Route path='/Sign-In' component={SignIn} />
+          {/* <Route path='/Sign-Up' component={SignUp} /> */}
           <Route path='/Apply' component={requireAuth(Apply)} />
         </Switch>
       </MuiThemeProvider>

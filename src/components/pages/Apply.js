@@ -8,6 +8,9 @@ import { withStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
+import CloseIcon from "@material-ui/icons/Close";
+import Snackbar from "@material-ui/core/Snackbar";
+import IconButton from "@material-ui/core/IconButton";
 
 import { connect } from "react-redux";
 import { loadUserApplication, updateUserApplication } from "../../actions/index";
@@ -54,7 +57,8 @@ class Apply extends Component {
       question1: {
         label: "[question 1 will be here]?",
         value: ""
-      }
+      },
+      hasClickedSave: false
     };
   }
 
@@ -77,26 +81,26 @@ class Apply extends Component {
   }
 
   replaceInput = () => {
-    if (this.props.application.questions !== undefined) {
-      const ids = Object.keys(this.state);
-      const { questions } = this.props.application;
-      for (let i = 0; i < ids.length; i++) {
-        let id = ids[i];
-        let label = this.state[id].label;
-        for (let j = 0; j < questions.length; j++) {
-          if (label === questions[j].label) {
-            this.setState({
-              [id]: {
-                label: this.state[id].label,
-                value: questions[j].value
-              }
-            });
-            break;
+    if (this.props.application) {
+      if (this.props.application.questions !== undefined) {
+        const ids = Object.keys(this.state);
+        const { questions } = this.props.application;
+        for (let i = 0; i < ids.length; i++) {
+          let id = ids[i];
+          let label = this.state[id].label;
+          for (let j = 0; j < questions.length; j++) {
+            if (label === questions[j].label) {
+              this.setState({
+                [id]: {
+                  label: this.state[id].label,
+                  value: questions[j].value
+                }
+              });
+              break;
+            }
           }
         }
       }
-      console.log(questions);
-      console.log(this.state);
     }
   };
 
@@ -104,7 +108,9 @@ class Apply extends Component {
     let questions = [];
     for (const id in this.state) {
       let value = this.state[id];
-      questions.push(value);
+      if (id != "hasClickedSave") {
+        questions.push(value);
+      }
     }
     console.log(this.props.application.submitted);
     this.props.updateUserApplication(this.props.user, questions, true);
@@ -114,9 +120,16 @@ class Apply extends Component {
     let questions = [];
     for (const id in this.state) {
       let value = this.state[id];
-      questions.push(value);
+      if (id != "hasClickedSave") {
+        questions.push(value);
+      }
     }
     this.props.updateUserApplication(this.props.user, questions);
+    this.setState({ hasClickedSave: true });
+  };
+
+  handleSnackbarClose = () => {
+    this.setState({ hasClickedSave: false });
   };
 
   handleChange = id => event => {
@@ -126,7 +139,7 @@ class Apply extends Component {
 
   render() {
     const { classes } = this.props;
-    let submitted = this.props.application.submitted;
+    let submitted = this.props.application ? this.props.application.submitted : false;
 
     return (
       <div className={classes.layout} align='center'>
@@ -204,6 +217,24 @@ class Apply extends Component {
             </Grid>
           </Grid>
         </Card>
+        <Snackbar
+          anchorOrigin={{
+            vertical: "bottom",
+            horizontal: "left"
+          }}
+          open={this.state.hasClickedSave}
+          autoHideDuration={6000}
+          onClose={this.handleSnackbarClose}
+          ContentProps={{
+            "aria-describedby": "message-id"
+          }}
+          message={<span id='message-id'>Save Successful.</span>}
+          action={[
+            <IconButton key='close' aria-label='Close' color='secondary' onClick={this.handleSnackbarClose}>
+              <CloseIcon />
+            </IconButton>
+          ]}
+        />
       </div>
     );
   }
