@@ -48,8 +48,8 @@ class NavMenu extends React.Component {
       logOut = <MenuItem onClick={this.signOut}>Sign Out</MenuItem>;
     } else {
       logIn = (
-        <StyledLink to='/Log-In'>
-          <MenuItem onClick={this.handleClose}>Log In</MenuItem>
+        <StyledLink to='/Sign-In'>
+          <MenuItem onClick={this.handleClose}>Sign In</MenuItem>
         </StyledLink>
       );
     }
@@ -63,23 +63,23 @@ class NavMenu extends React.Component {
           onClick={this.handleClick}>
           <MenuIcon />
         </IconButton>
-        <Menu id='nav-menu' color='inherit' anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={this.handleClose}>
+        <Menu id='nav-menu' anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={this.handleClose}>
           {logIn}
           {apply}
           {logOut}
-          <StyledLink to='/About'>
+          <StyledLink to='/#About'>
             <MenuItem onClick={this.handleClose}>About</MenuItem>
           </StyledLink>
 
-          <StyledLink to='/Event-Scope'>
+          <StyledLink to='/#Scope'>
             <MenuItem onClick={this.handleClose}>Event Scope</MenuItem>
           </StyledLink>
 
-          <StyledLink to='/Example-Projects'>
+          <StyledLink to='/#Example-Projects'>
             <MenuItem onClick={this.handleClose}>Example Projects</MenuItem>
           </StyledLink>
 
-          <StyledLink to='/Contact-Us'>
+          <StyledLink to='/#Contact-Us'>
             <MenuItem onClick={this.handleClose}>Contact Us</MenuItem>
           </StyledLink>
         </Menu>

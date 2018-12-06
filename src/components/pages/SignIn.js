@@ -1,27 +1,15 @@
 import Button from "@material-ui/core/Button";
-import Checkbox from "@material-ui/core/Checkbox";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import FormControl from "@material-ui/core/FormControl";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Input from "@material-ui/core/Input";
-import InputLabel from "@material-ui/core/InputLabel";
 import Paper from "@material-ui/core/Paper";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Typography from "@material-ui/core/Typography";
 import PropTypes from "prop-types";
+import { Grid, Divider } from "@material-ui/core";
 import React, { Component } from "react";
-import StyledLink from "./../Styled-Link";
 import { withRouter } from "react-router-dom";
-import IconButton from "@material-ui/core/IconButton";
 
 import { connect } from "react-redux";
-import {
-  signInWithEmailAndPassword,
-  signInWithGoogle,
-  signInWithGithub,
-  signInWithTwitter,
-  signInWithFacebook
-} from "../../actions";
+import { signInWithGoogle, signInWithGithub, signInWithTwitter, signInWithFacebook } from "../../actions";
 import Google from "mdi-material-ui/Google";
 import GithubCircle from "mdi-material-ui/GithubCircle";
 import Facebook from "mdi-material-ui/Facebook";
@@ -46,39 +34,34 @@ const styles = theme => ({
     alignItems: "center",
     padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 3}px ${theme.spacing.unit * 3}px`
   },
-  form: {
+  title: {
+    marginBottom: theme.spacing.unit * 2
+  },
+  button: {
     width: "100%",
-    marginTop: theme.spacing.unit
+    margin: "10px",
+    textAlign: "left"
   },
-  formControl: {
+  icon: {
+    marginRight: theme.spacing.unit,
+    color: theme.palette.secondary.main,
+    fontSize: "40px"
+  },
+  buttonText: {
+    fontSize: "14pt",
     color: theme.palette.secondary.main
   },
-  submit: {
-    marginTop: theme.spacing.unit * 3
+  divider: {
+    fontColor: theme.palette.secondary.main
   },
-  signUp: {
-    marginTop: theme.spacing.unit * 2
-  },
-  link: {
-    color: theme.palette.secondary.main
-  },
-  checkRoot: {
-    color: theme.palette.secondary.main,
-    "&$checked": {
-      color: theme.palette.secondary.light
-    }
-  },
-  checked: {},
-  inputRoot: {
-    color: theme.palette.secondary.main,
-    "&$inputFocused": {
-      color: theme.palette.secondary.main
-    }
-  },
-  inputFocused: {}
+  text: {
+    marginBottom: "10px",
+    fontSize: "12pt",
+    textAlign: "center"
+  }
 });
 
-class LogIn extends Component {
+class SignIn extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -94,16 +77,16 @@ class LogIn extends Component {
     });
   };
 
-  signInWithEmailAndPassword = () => {
-    this.props.signInWithEmailAndPassword(this.state.email, this.state.password);
-  };
+  // signInWithEmailAndPassword = () => {
+  //   this.props.signInWithEmailAndPassword(this.state.email, this.state.password);
+  // };
 
   static contextTypes = {
     router: PropTypes.object
   };
 
   componentWillUpdate(nextProps) {
-    if (nextProps.auth) {
+    if (nextProps.auth != null) {
       this.context.router.history.push("/Apply");
     }
   }
@@ -116,11 +99,14 @@ class LogIn extends Component {
         <CssBaseline />
         <main className={classes.layout}>
           <Paper className={classes.paper}>
-            <Typography component='h1' variant='h5'>
-              Log In
+            <Typography variant='h2' className={classes.title}>
+              Sign In
             </Typography>
-
-            <form className={classes.form}>
+            {/* <Divider variant='fullWidth' className={classes.divider} /> */}
+            <Typography variant='body1' color='textPrimary' className={classes.text}>
+              Make sure to use the same account you used last time you signed in.
+            </Typography>
+            {/* <form className={classes.form}>
               <FormControl margin='normal' fullWidth>
                 <InputLabel
                   htmlFor='email'
@@ -186,30 +172,61 @@ class LogIn extends Component {
                 className={classes.submit}
                 onClick={this.signInWithEmailAndPassword}>
                 <StyledLink to='/Apply'>Log In</StyledLink>
-                {/* Log In */}
+                Log In
               </Button>
-            </form>
-            <Typography className={classes.signUp}>
+            </form> */}
+            {/* <Typography className={classes.signUp}>
               Don't have an account?{" "}
               <StyledLink to='/Sign-Up' className={classes.link}>
                 Click here to sign up!
               </StyledLink>{" "}
               Or sign up with the methods below.
-            </Typography>
-            <div>
-              <IconButton color='secondary' onClick={this.props.signInWithGoogle} aria-label='GoogleOAuth'>
-                <Google />
-              </IconButton>
-              <IconButton color='secondary' onClick={this.props.signInWithGithub}>
-                <GithubCircle />
-              </IconButton>
-              <IconButton color='secondary' onClick={this.props.signInWithFacebook}>
-                <Facebook />
-              </IconButton>
-              <IconButton color='secondary' onClick={this.props.signInWithTwitter}>
-                <Twitter />
-              </IconButton>
-            </div>
+            </Typography> */}
+            <Grid container justify={"center"} spacing={24}>
+              <Button
+                onClick={this.props.signInWithGoogle}
+                className={classes.button}
+                variant='outlined'
+                color='secondary'>
+                <Google className={classes.icon} />
+                <Typography variant='h5' className={classes.buttonText}>
+                  Sign In With Google
+                </Typography>
+              </Button>
+              <Button
+                onClick={this.props.signInWithGithub}
+                className={classes.button}
+                variant='outlined'
+                color='secondary'>
+                <GithubCircle className={classes.icon} />
+                <Typography variant='h5' className={classes.buttonText}>
+                  Sign In With Github
+                </Typography>
+              </Button>
+              <Button
+                onClick={this.props.signInWithFacebook}
+                className={classes.button}
+                variant='outlined'
+                color='secondary'>
+                <Facebook className={classes.icon} />
+                <Typography variant='h5' className={classes.buttonText}>
+                  Sign In With Facebook
+                </Typography>
+              </Button>
+              <Button
+                onClick={this.props.signInWithTwitter}
+                className={classes.button}
+                variant='outlined'
+                color='secondary'>
+                <Twitter className={classes.icon} />
+                <Typography variant='h5' className={classes.buttonText}>
+                  Sign In With Twitter
+                </Typography>
+              </Button>
+              <Typography variant='body1' color='textPrimary' className={classes.text}>
+                Need to Sign Up? Using one of the auth providers above will do just that!
+              </Typography>
+            </Grid>
           </Paper>
         </main>
       </React.Fragment>
@@ -221,7 +238,7 @@ function mapStateToProps({ auth }) {
   return { auth };
 }
 
-LogIn.propTypes = {
+SignIn.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
@@ -229,11 +246,10 @@ export default withRouter(
   connect(
     mapStateToProps,
     {
-      signInWithEmailAndPassword,
       signInWithGoogle,
       signInWithGithub,
       signInWithFacebook,
       signInWithTwitter
     }
-  )(withStyles(styles)(LogIn))
+  )(withStyles(styles)(SignIn))
 );

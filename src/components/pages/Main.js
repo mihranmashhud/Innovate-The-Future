@@ -10,7 +10,12 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import IFLogo from "./Home/IFLogo";
-import { FormHelperText } from "@material-ui/core";
+import { Fab } from "@material-ui/core";
+import { ArrowUp } from "mdi-material-ui";
+
+import About from "./About";
+import Scope from "./Scope";
+import Contact from "./Contact";
 
 const styles = theme => ({
   layout: {
@@ -47,26 +52,24 @@ const styles = theme => ({
     width: "600px",
     margin: "auto",
     marginTop: "20px"
+  },
+  fab: {
+    position: "fixed",
+    bottom: "30px",
+    right: "30px"
   }
 });
 
-function Home(props) {
+function Main(props) {
   const { classes } = props;
 
   return (
     <main className={classes.layout}>
       <CssBaseline />
-      <Card className={classes.card} elevation={1}>
-        <Parallax
-          bgImage={require(`./../../assets/${Math.random() < 0.5 ? "city-image-1.png" : "city-image.jpeg"}`)}
-          bgWidth={"100%"}
-          strength={300}
-          blur={3}>
-          <div
-            style={{
-              textAlign: "center"
-            }}>
-            <IFLogo width={"60%"} />
+      <Card className={classes.card} elevation={1} id='Home'>
+        <Parallax bgImage={require(`./../../assets/city-image-1.png`)} bgWidth={"100%"} strength={300} blur={3}>
+          <div style={{ textAlign: "center" }}>
+            <IFLogo width={"400px"} />
           </div>
         </Parallax>
 
@@ -84,20 +87,28 @@ function Home(props) {
         <CardActions>
           <div className={classes.buttons}>
             <Button className={classes.button} color='secondary'>
-              <StyledLink to='/Apply'>Apply Now</StyledLink>
+              <StyledLink to='/Sign-In'>Apply Now</StyledLink>
             </Button>
             <Button className={classes.button} color='secondary'>
-              <StyledLink to='/Event-Scope'>See The Scope</StyledLink>
+              <StyledLink to='/#Scope'>See The Scope</StyledLink>
             </Button>
           </div>
         </CardActions>
       </Card>
+      <About />
+      <Scope />
+      <Contact />
+      <StyledLink to='/#Navigation'>
+        <Fab color='secondary' aria-label='Go To Top' className={classes.fab}>
+          <ArrowUp />
+        </Fab>
+      </StyledLink>
     </main>
   );
 }
 
-Home.propTypes = {
+Main.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(Home);
+export default withStyles(styles)(Main);

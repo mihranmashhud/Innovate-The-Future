@@ -10,6 +10,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import Hidden from "@material-ui/core/Hidden";
 import StyledLink from "./Styled-Link";
 import NavMenu from "./NavMenu";
+import IFLogo from "./pages/Home/IFLogo";
 
 const styles = theme => ({
   root: {
@@ -30,17 +31,19 @@ const styles = theme => ({
 function Navigation(props) {
   const { classes } = props;
   return (
-    <div className={classes.root}>
-      <AppBar position='static' color='paper'>
+    <div className={classes.root} id='Navigation'>
+      <AppBar position='static'>
         <Toolbar>
           <Hidden smDown>
             <Typography variant='h5' color='secondary' className={classes.grow}>
-              <StyledLink to='/'>Innovate The Future</StyledLink>
+              <StyledLink to='/#Home'>Innovate The Future</StyledLink>
             </Typography>
           </Hidden>
           <Hidden mdUp>
             <Typography variant='h5' color='secondary' className={classes.grow}>
-              <StyledLink to='/'>IF</StyledLink>
+              <StyledLink to='/#Home'>
+                <IFLogo height={"40px"} />
+              </StyledLink>
             </Typography>
           </Hidden>
           <NavMenu />
