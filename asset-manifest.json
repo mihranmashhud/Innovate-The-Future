@@ -1,13 +1,13 @@
 {
   "main.css": "/Innovate-The-Future/static/css/main.9ecb5357.chunk.css",
-  "main.js": "/Innovate-The-Future/static/js/main.48ef3d48.chunk.js",
-  "main.js.map": "/Innovate-The-Future/static/js/main.48ef3d48.chunk.js.map",
+  "main.js": "/Innovate-The-Future/static/js/main.b95167ef.chunk.js",
+  "main.js.map": "/Innovate-The-Future/static/js/main.b95167ef.chunk.js.map",
   "static/css/1.afa0140a.chunk.css": "/Innovate-The-Future/static/css/1.afa0140a.chunk.css",
-  "static/js/1.261be35a.chunk.js": "/Innovate-The-Future/static/js/1.261be35a.chunk.js",
-  "static/js/1.261be35a.chunk.js.map": "/Innovate-The-Future/static/js/1.261be35a.chunk.js.map",
+  "static/js/1.430b9468.chunk.js": "/Innovate-The-Future/static/js/1.430b9468.chunk.js",
+  "static/js/1.430b9468.chunk.js.map": "/Innovate-The-Future/static/js/1.430b9468.chunk.js.map",
   "runtime~main.js": "/Innovate-The-Future/static/js/runtime~main.8a3954aa.js",
   "runtime~main.js.map": "/Innovate-The-Future/static/js/runtime~main.8a3954aa.js.map",
-  "static/media/index.css": "/Innovate-The-Future/static/media/roboto-latin-900italic.bc833e72.woff",
+  "static/media/index.css": "/Innovate-The-Future/static/media/roboto-latin-700.cf6613d1.woff",
   "static/media/vr-image.jpeg": "/Innovate-The-Future/static/media/vr-image.c4c6b622.jpeg",
   "static/media/business-man-image.jpg": "/Innovate-The-Future/static/media/business-man-image.e7f4b02f.jpg",
   "static/media/city-image-1.png": "/Innovate-The-Future/static/media/city-image-1.25a96dcd.png",
@@ -15,6 +15,6 @@
   "static/css/main.9ecb5357.chunk.css.map": "/Innovate-The-Future/static/css/main.9ecb5357.chunk.css.map",
   "static/css/1.afa0140a.chunk.css.map": "/Innovate-The-Future/static/css/1.afa0140a.chunk.css.map",
   "index.html": "/Innovate-The-Future/index.html",
-  "precache-manifest.30dc70ff96b67418a5728759c0de874f.js": "/Innovate-The-Future/precache-manifest.30dc70ff96b67418a5728759c0de874f.js",
+  "precache-manifest.0b386f12f2c6405a2eda33d46a813c2b.js": "/Innovate-The-Future/precache-manifest.0b386f12f2c6405a2eda33d46a813c2b.js",
   "service-worker.js": "/Innovate-The-Future/service-worker.js"
 }
