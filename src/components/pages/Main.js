@@ -12,6 +12,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import IFLogo from "./Home/IFLogo";
 import { Fab } from "@material-ui/core";
 import { ArrowUp } from "mdi-material-ui";
+import Hidden from "@material-ui/core/Hidden";
 
 import About from "./About";
 import Scope from "./Scope";
@@ -57,6 +58,16 @@ const styles = theme => ({
     position: "fixed",
     bottom: "30px",
     right: "30px"
+  },
+  parallax: {
+    alignItems: "center"
+  },
+  logo: {
+    margin: "auto",
+    position: "relative",
+    height: "300",
+    alignItems: "center",
+    textAlign: "center"
   }
 });
 
@@ -67,9 +78,18 @@ function Main(props) {
     <main className={classes.layout}>
       <CssBaseline />
       <Card className={classes.card} elevation={1} id='Home'>
-        <Parallax bgImage={require(`./../../assets/city-image-1.png`)} bgWidth={"100%"} strength={300} blur={3}>
-          <div style={{ textAlign: "center" }}>
-            <IFLogo width={"400px"} />
+        <Parallax
+          bgImage={require(`./../../assets/city-image-1.png`)}
+          bgWidth={"100%"}
+          strength={300}
+          className={classes.parallax}>
+          <div className={classes.logo}>
+            <Hidden mdUp>
+              <IFLogo width={"300px"} />
+            </Hidden>
+            <Hidden smDown>
+              <IFLogo width={"400px"} />
+            </Hidden>
           </div>
         </Parallax>
 

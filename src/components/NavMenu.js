@@ -75,9 +75,9 @@ class NavMenu extends React.Component {
             <MenuItem onClick={this.handleClose}>Event Scope</MenuItem>
           </StyledLink>
 
-          <StyledLink to='/#Example-Projects'>
+          {/* <StyledLink to='/#Example-Projects'>
             <MenuItem onClick={this.handleClose}>Example Projects</MenuItem>
-          </StyledLink>
+          </StyledLink> */}
 
           <StyledLink to='/#Contact-Us'>
             <MenuItem onClick={this.handleClose}>Contact Us</MenuItem>

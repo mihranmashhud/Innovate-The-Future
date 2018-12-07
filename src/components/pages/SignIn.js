@@ -224,7 +224,7 @@ class SignIn extends Component {
                 </Typography>
               </Button>
               <Typography variant='body1' color='textPrimary' className={classes.text}>
-                Need to Sign Up? Using one of the auth providers above will do just that!
+                Need to sign up? Using one of the auth providers above will do just that!
               </Typography>
             </Grid>
           </Paper>
