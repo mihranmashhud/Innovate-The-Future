@@ -19,8 +19,11 @@ const styles = theme => ({
   layout: {
     width: "auto",
     display: "block",
-    marginLeft: theme.spacing.unit * 3,
-    marginRight: theme.spacing.unit * 3,
+    minWidth: "70%",
+    maxWidth: "90%",
+    width: "600px",
+    margin: "auto",
+    marginTop: "20px",
     alignItems: "center"
   },
   card: {
@@ -150,7 +153,7 @@ class Apply extends Component {
             Your Application
           </Typography>
           <Grid container spacing={24} justify='center'>
-            <Grid item xs={12} sm={6} md={4} lg={3}>
+            <Grid item xs={12} sm={6} md={6} lg={3}>
               <TextForm
                 label={this.state.firstName.label}
                 required
@@ -160,7 +163,7 @@ class Apply extends Component {
                 readOnly={submitted}
               />
             </Grid>
-            <Grid item xs={12} sm={6} md={4} lg={3}>
+            <Grid item xs={12} sm={6} md={6} lg={3}>
               <TextForm
                 label={this.state.lastName.label}
                 required
@@ -170,7 +173,7 @@ class Apply extends Component {
                 readOnly={submitted}
               />
             </Grid>
-            <Grid item xs={12} sm={12} md={6}>
+            <Grid item xs={12} lg={6}>
               <TextForm
                 label={this.state.email.label}
                 required
