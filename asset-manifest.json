@@ -1,10 +1,10 @@
 {
   "main.css": "/Innovate-The-Future/static/css/main.9ecb5357.chunk.css",
-  "main.js": "/Innovate-The-Future/static/js/main.59ab8827.chunk.js",
-  "main.js.map": "/Innovate-The-Future/static/js/main.59ab8827.chunk.js.map",
+  "main.js": "/Innovate-The-Future/static/js/main.48ef3d48.chunk.js",
+  "main.js.map": "/Innovate-The-Future/static/js/main.48ef3d48.chunk.js.map",
   "static/css/1.afa0140a.chunk.css": "/Innovate-The-Future/static/css/1.afa0140a.chunk.css",
-  "static/js/1.9cdb21a8.chunk.js": "/Innovate-The-Future/static/js/1.9cdb21a8.chunk.js",
-  "static/js/1.9cdb21a8.chunk.js.map": "/Innovate-The-Future/static/js/1.9cdb21a8.chunk.js.map",
+  "static/js/1.261be35a.chunk.js": "/Innovate-The-Future/static/js/1.261be35a.chunk.js",
+  "static/js/1.261be35a.chunk.js.map": "/Innovate-The-Future/static/js/1.261be35a.chunk.js.map",
   "runtime~main.js": "/Innovate-The-Future/static/js/runtime~main.8a3954aa.js",
   "runtime~main.js.map": "/Innovate-The-Future/static/js/runtime~main.8a3954aa.js.map",
   "static/media/index.css": "/Innovate-The-Future/static/media/roboto-latin-900italic.bc833e72.woff",
@@ -12,9 +12,9 @@
   "static/media/business-man-image.jpg": "/Innovate-The-Future/static/media/business-man-image.e7f4b02f.jpg",
   "static/media/city-image-1.png": "/Innovate-The-Future/static/media/city-image-1.25a96dcd.png",
   "static/media/developers-image.jpg": "/Innovate-The-Future/static/media/developers-image.786d8c16.jpg",
-  "static/css/1.afa0140a.chunk.css.map": "/Innovate-The-Future/static/css/1.afa0140a.chunk.css.map",
   "static/css/main.9ecb5357.chunk.css.map": "/Innovate-The-Future/static/css/main.9ecb5357.chunk.css.map",
+  "static/css/1.afa0140a.chunk.css.map": "/Innovate-The-Future/static/css/1.afa0140a.chunk.css.map",
   "index.html": "/Innovate-The-Future/index.html",
-  "precache-manifest.9ccdc52039c5d275ca292f8018b94f6f.js": "/Innovate-The-Future/precache-manifest.9ccdc52039c5d275ca292f8018b94f6f.js",
+  "precache-manifest.30dc70ff96b67418a5728759c0de874f.js": "/Innovate-The-Future/precache-manifest.30dc70ff96b67418a5728759c0de874f.js",
   "service-worker.js": "/Innovate-The-Future/service-worker.js"
 }
