@@ -48,7 +48,7 @@ function Contact(props) {
             Email
           </Typography>
           <Typography className={classes.pos1} variant='h6' component='h2'>
-            email-if.innovatethefuture@gmail.com
+            if.innovatethefuture@gmail.com
           </Typography>
           <Typography className={classes.pos} variant='h4' color='secondary'>
             Address
@@ -61,7 +61,7 @@ function Contact(props) {
           </Typography>
 
           <div>
-            <IconButton title='Visit our Facebook Page' color='white' href='http://www.facebook.com'>
+            <IconButton title='Visit our Facebook Page' color='white' href='http://www.facebook.com/ifpeel/'>
               <Facebook />
             </IconButton>
 
@@ -71,10 +71,6 @@ function Contact(props) {
 
             <IconButton title='See our Twitter' color='white' href='http://www.twitter.com'>
               <Twitter />
-            </IconButton>
-
-            <IconButton title='See our Snapchat' color='white' href='http://www.snapchat.com'>
-              <Snapchat />
             </IconButton>
           </div>
         </CardContent>
