@@ -69,7 +69,7 @@ function Contact(props) {
               <Instagram />
             </IconButton>
 
-            <IconButton title='See our Twitter' color='white' href='http://www.twitter.com'>
+            <IconButton title='See our Twitter' color='white' href='https://www.twitter.com/IFInnovatetheF1'>
               <Twitter />
             </IconButton>
           </div>
