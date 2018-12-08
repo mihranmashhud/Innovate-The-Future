@@ -12,7 +12,6 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import Instagram from "mdi-material-ui/Instagram";
 import Facebook from "mdi-material-ui/Facebook";
 import Twitter from "mdi-material-ui/Twitter";
-import Snapchat from "mdi-material-ui/Snapchat";
 
 const styles = {
   card: {
