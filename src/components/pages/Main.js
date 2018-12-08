@@ -112,7 +112,7 @@ function Main(props) {
           </Typography>
         </CardContent>
         <CardActions>
-          <Hidden xs>
+          <Hidden xsDown>
             <div className={classes.buttons}>
               <Button className={classes.button} color='secondary'>
                 <StyledLink to={props.authenticated ? "/Apply" : "/Sign-In"}>Apply Now</StyledLink>
