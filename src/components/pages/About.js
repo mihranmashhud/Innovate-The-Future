@@ -20,7 +20,8 @@ const styles = theme => ({
   },
   title: {
     textAlign: "center",
-    marginBottom: "20px"
+    marginBottom: "20px",
+    fontSize: "35pt"
   },
   text: {
     fontSize: "20px",

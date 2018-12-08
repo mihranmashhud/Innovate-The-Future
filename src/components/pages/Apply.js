@@ -34,11 +34,10 @@ const styles = theme => ({
     padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 3}px ${theme.spacing.unit * 3}px`
   },
   title: {
-    color: theme.palette.text.primary
+    color: theme.palette.text.primary,
+    fontSize: "35pt"
   },
-  button: {
-    margin: "10px"
-  }
+  button: {}
 });
 
 class Apply extends Component {

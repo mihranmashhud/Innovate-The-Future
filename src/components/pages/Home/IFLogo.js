@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import anime from "animejs";
+import "./IFLogo.css";
 
 export default class IFLogo extends Component {
   componentDidMount() {

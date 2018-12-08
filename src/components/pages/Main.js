@@ -13,6 +13,7 @@ import IFLogo from "./Home/IFLogo";
 import { Fab } from "@material-ui/core";
 import { ArrowUp } from "mdi-material-ui";
 import Hidden from "@material-ui/core/Hidden";
+import { connect } from "react-redux";
 
 import About from "./About";
 import Scope from "./Scope";
@@ -24,7 +25,8 @@ const styles = theme => ({
     display: "block"
   },
   buttons: {
-    margin: "auto"
+    margin: "auto",
+    marginBottom: "20px"
   },
   button: {
     fontSize: "20px",
@@ -40,7 +42,8 @@ const styles = theme => ({
     margin: "auto",
     marginTop: "20px",
     marginBottom: "20px",
-    textAlign: "center"
+    textAlign: "center",
+    fontSize: "30pt"
   },
   text: {
     width: "90%",
@@ -76,7 +79,11 @@ function Main(props) {
 
   return (
     <main className={classes.layout}>
-      <CssBaseline />
+      <CssBaseline
+        style={{
+          backgroundImage: "./static/media/IF-Banner.png"
+        }}
+      />
       <Card className={classes.card} elevation={1} id='Home'>
         <Parallax
           bgImage={require(`./../../assets/city-image-1.png`)}
@@ -85,7 +92,7 @@ function Main(props) {
           className={classes.parallax}>
           <div className={classes.logo}>
             <Hidden mdUp>
-              <IFLogo width={"300px"} />
+              <IFLogo width={"250px"} />
             </Hidden>
             <Hidden smDown>
               <IFLogo width={"400px"} />
@@ -105,14 +112,28 @@ function Main(props) {
           </Typography>
         </CardContent>
         <CardActions>
-          <div className={classes.buttons}>
-            <Button className={classes.button} color='secondary'>
-              <StyledLink to='/Sign-In'>Apply Now</StyledLink>
-            </Button>
-            <Button className={classes.button} color='secondary'>
-              <StyledLink to='/#Scope'>See The Scope</StyledLink>
-            </Button>
-          </div>
+          <Hidden xs>
+            <div className={classes.buttons}>
+              <Button className={classes.button} color='secondary'>
+                <StyledLink to={props.authenticated ? "/Apply" : "/Sign-In"}>Apply Now</StyledLink>
+              </Button>
+              <Button className={classes.button} color='secondary'>
+                <StyledLink to='/#Scope'>See The Scope</StyledLink>
+              </Button>
+            </div>
+          </Hidden>
+          <Hidden smUp>
+            <div className={classes.buttons}>
+              <Button className={classes.button} color='secondary'>
+                <StyledLink to={props.authenticated ? "/Apply" : "/Sign-In"}>Apply Now</StyledLink>
+              </Button>
+            </div>
+            <div className={classes.buttons}>
+              <Button className={classes.button} color='secondary'>
+                <StyledLink to='/#Scope'>See The Scope</StyledLink>
+              </Button>
+            </div>
+          </Hidden>
         </CardActions>
       </Card>
       <About />
@@ -131,4 +152,13 @@ Main.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(Main);
+function mapStateToProps(state) {
+  return {
+    authenticated: Boolean(state.auth)
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  {}
+)(withStyles(styles)(Main));

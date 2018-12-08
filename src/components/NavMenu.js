@@ -1,13 +1,10 @@
 import React from "react";
-import Menu from "@material-ui/core/Menu";
-import MenuItem from "@material-ui/core/MenuItem";
-import IconButton from "@material-ui/core/IconButton";
+import { Menu, MenuItem, IconButton, Snackbar, Hidden, Button } from "@material-ui/core/";
 import MenuIcon from "@material-ui/icons/Menu";
 import StyledLink from "./Styled-Link";
 import { connect } from "react-redux";
 import { signOut } from "../actions";
 import CloseIcon from "@material-ui/icons/Close";
-import Snackbar from "@material-ui/core/Snackbar";
 
 class NavMenu extends React.Component {
   state = {
@@ -41,66 +38,127 @@ class NavMenu extends React.Component {
 
     if (this.props.authenticated) {
       apply = (
-        <StyledLink to='/Apply'>
-          <MenuItem onClick={this.handleClose}>Your Application</MenuItem>
-        </StyledLink>
+        <div>
+          <Hidden smDown>
+            <StyledLink to='/Apply'>
+              <Button color='secondary'>Your Application</Button>
+            </StyledLink>
+          </Hidden>
+          <Hidden mdUp>
+            <StyledLink to='/Apply'>
+              <MenuItem onClick={this.handleClose}>Your Application</MenuItem>
+            </StyledLink>
+          </Hidden>
+        </div>
       );
-      logOut = <MenuItem onClick={this.signOut}>Sign Out</MenuItem>;
+      logOut = (
+        <div>
+          <Hidden smDown>
+            <Button onClick={this.signOut} color='secondary'>
+              Sign Out
+            </Button>
+          </Hidden>
+          <Hidden mdUp>
+            <MenuItem onClick={this.signOut}>Sign Out</MenuItem>
+          </Hidden>
+        </div>
+      );
     } else {
       logIn = (
-        <StyledLink to='/Sign-In'>
-          <MenuItem onClick={this.handleClose}>Sign In</MenuItem>
-        </StyledLink>
+        <div>
+          <StyledLink to='/Sign-In'>
+            <Button color='secondary'>Sign In</Button>
+          </StyledLink>
+          <Hidden mdUp>
+            <StyledLink to='/Sign-In'>
+              <MenuItem onClick={this.handleClose}>Sign In</MenuItem>
+            </StyledLink>
+          </Hidden>
+        </div>
       );
     }
 
     return (
       <div>
-        <IconButton
-          aria-owns={anchorEl ? "nav-menu" : null}
-          aria-haspopup='true'
-          color='secondary'
-          onClick={this.handleClick}>
-          <MenuIcon />
-        </IconButton>
-        <Menu id='nav-menu' anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={this.handleClose}>
-          {logIn}
-          {apply}
-          {logOut}
+        <Hidden smDown>
           <StyledLink to='/#About'>
-            <MenuItem onClick={this.handleClose}>About</MenuItem>
+            <Button>About</Button>
           </StyledLink>
-
           <StyledLink to='/#Scope'>
-            <MenuItem onClick={this.handleClose}>Event Scope</MenuItem>
+            <Button>Event Scope</Button>
           </StyledLink>
-
           {/* <StyledLink to='/#Example-Projects'>
+            <Button>Example Projects</Button>
+          </StyledLink> */}
+          <StyledLink to='/#Contact-Us'>
+            <Button>Contact Us</Button>
+          </StyledLink>
+          {!this.props.authenticated && (
+            <StyledLink to='/Sign-In'>
+              <Button color='secondary'>Sign In</Button>
+            </StyledLink>
+          )}
+          {this.props.authenticated && (
+            <StyledLink to='/Apply'>
+              <Button color='secondary'>Your Application</Button>
+            </StyledLink>
+          )}
+          {this.props.authenticated && (
+            <Button onClick={this.signOut} color='secondary'>
+              Sign Out
+            </Button>
+          )}
+        </Hidden>
+        <Hidden mdUp>
+          <IconButton
+            aria-owns={anchorEl ? "nav-menu" : null}
+            aria-haspopup='true'
+            color='secondary'
+            onClick={this.handleClick}>
+            <MenuIcon />
+          </IconButton>
+          <Menu id='nav-menu' anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={this.handleClose}>
+            {!this.props.authenticated && (
+              <StyledLink to='/Sign-In'>
+                <MenuItem onClick={this.handleClose}>Sign In</MenuItem>
+              </StyledLink>
+            )}
+            {this.props.authenticated && (
+              <StyledLink to='/Apply'>
+                <MenuItem onClick={this.handleClose}>Your Application</MenuItem>
+              </StyledLink>
+            )}
+            {this.props.authenticated && <MenuItem onClick={this.signOut}>Sign Out</MenuItem>}
+            <StyledLink to='/#About'>
+              <MenuItem onClick={this.handleClose}>About</MenuItem>
+            </StyledLink>
+
+            <StyledLink to='/#Scope'>
+              <MenuItem onClick={this.handleClose}>Event Scope</MenuItem>
+            </StyledLink>
+
+            {/* <StyledLink to='/#Example-Projects'>
             <MenuItem onClick={this.handleClose}>Example Projects</MenuItem>
           </StyledLink> */}
 
-          <StyledLink to='/#Contact-Us'>
-            <MenuItem onClick={this.handleClose}>Contact Us</MenuItem>
-          </StyledLink>
-        </Menu>
-        <Snackbar
-          anchorOrigin={{
-            vertical: "bottom",
-            horizontal: "left"
-          }}
-          open={hasSignedOut}
-          autoHideDuration={6000}
-          onClose={this.handleSnackbarClose}
-          ContentProps={{
-            "aria-describedby": "message-id"
-          }}
-          message={<span id='message-id'>You have been successfully signed out</span>}
-          action={[
-            <IconButton key='close' aria-label='Close' color='secondary' onClick={this.handleSnackbarClose}>
-              <CloseIcon />
-            </IconButton>
-          ]}
-        />
+            <StyledLink to='/#Contact-Us'>
+              <MenuItem onClick={this.handleClose}>Contact Us</MenuItem>
+            </StyledLink>
+          </Menu>
+          <Snackbar
+            anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
+            open={hasSignedOut}
+            autoHideDuration={6000}
+            onClose={this.handleSnackbarClose}
+            ContentProps={{ "aria-describedby": "message-id" }}
+            message={<span id='message-id'>You have been successfully signed out</span>}
+            action={[
+              <IconButton key='close' aria-label='Close' color='secondary' onClick={this.handleSnackbarClose}>
+                <CloseIcon />
+              </IconButton>
+            ]}
+          />
+        </Hidden>
       </div>
     );
   }
