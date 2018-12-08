@@ -145,20 +145,20 @@ class NavMenu extends React.Component {
               <MenuItem onClick={this.handleClose}>Contact Us</MenuItem>
             </StyledLink>
           </Menu>
-          <Snackbar
-            anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
-            open={hasSignedOut}
-            autoHideDuration={6000}
-            onClose={this.handleSnackbarClose}
-            ContentProps={{ "aria-describedby": "message-id" }}
-            message={<span id='message-id'>You have been successfully signed out</span>}
-            action={[
-              <IconButton key='close' aria-label='Close' color='secondary' onClick={this.handleSnackbarClose}>
-                <CloseIcon />
-              </IconButton>
-            ]}
-          />
         </Hidden>
+        <Snackbar
+          anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
+          open={hasSignedOut}
+          autoHideDuration={6000}
+          onClose={this.handleSnackbarClose}
+          ContentProps={{ "aria-describedby": "message-id" }}
+          message={<span id='message-id'>You have been successfully signed out</span>}
+          action={[
+            <IconButton key='close' aria-label='Close' color='secondary' onClick={this.handleSnackbarClose}>
+              <CloseIcon />
+            </IconButton>
+          ]}
+        />
       </div>
     );
   }
