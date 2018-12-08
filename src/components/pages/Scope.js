@@ -19,11 +19,13 @@ const styles = theme => ({
   },
   title: {
     textAlign: "center",
-    marginBottom: "20px"
+    marginBottom: "20px",
+    fontSize: "35pt"
   },
   subtitle: {
     textAlign: "left",
-    margin: "20px"
+    margin: "20px",
+    fontSize: "25pt"
   },
   text: {
     fontSize: "20px",
@@ -54,9 +56,9 @@ class Scope extends Component {
             What The Event Is Like
           </Typography>
           <Typography variant='body1' className={classes.text}>
-            Cillum laboris aliquip id aliqua anim irure elit anim ex eu deserunt cupidatat pariatur labore. Irure
-            officia Lorem consequat cillum nulla sint ad do qui dolore aute aute fugiat pariatur. Aute ea ullamco esse
-            ullamco ipsum sint sunt ad ipsum do officia qui commodo. Ad non enim occaecat amet exercitation ex.
+            HYPE IT UP! Cillum laboris aliquip id aliqua anim irure elit anim ex eu deserunt cupidatat pariatur labore.
+            Irure officia Lorem consequat cillum nulla sint ad do qui dolore aute aute fugiat pariatur. Aute ea ullamco
+            esse ullamco ipsum sint sunt ad ipsum do officia qui commodo. Ad non enim occaecat amet exercitation ex.
           </Typography>
 
           {/* <Parallax bgImage={require("./../../assets/developers-image.jpg")} bgWidth={"100%"} strength={200}>

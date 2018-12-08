@@ -24,11 +24,15 @@ const styles = {
     marginTop: "20px",
     marginBottom: "20px"
   },
+  title: {
+    fontSize: "35pt"
+  },
   pos: {
     marginBottom: 12
   },
   pos1: {
-    marginBottom: 25
+    marginBottom: 25,
+    fontSize: "14pt"
   }
 };
 
@@ -40,7 +44,7 @@ function Contact(props) {
       <CssBaseline />
       <Card className={classes.card}>
         <CardContent>
-          <Typography variant='h2' color='secondary' gutterBottom>
+          <Typography variant='h2' color='secondary' gutterBottom className={classes.title}>
             Contact Information
           </Typography>
           <Typography className={classes.pos} variant='h4' color='secondary'>

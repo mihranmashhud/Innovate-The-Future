@@ -32,20 +32,29 @@ function Navigation(props) {
   const { classes } = props;
   return (
     <div className={classes.root} id='Navigation'>
-      <AppBar position='static'>
+      <div
+        style={{
+          padding: "32px"
+        }}
+      />
+      <AppBar position='fixed'>
         <Toolbar>
-          <Hidden smDown>
+          {/* <Hidden smDown>
             <Typography variant='h5' color='secondary' className={classes.grow}>
               <StyledLink to='/#Home'>Innovate The Future</StyledLink>
             </Typography>
           </Hidden>
-          <Hidden mdUp>
-            <Typography variant='h5' color='secondary' className={classes.grow}>
-              <StyledLink to='/#Home'>
-                <IFLogo height={"40px"} />
-              </StyledLink>
-            </Typography>
-          </Hidden>
+          <Hidden mdUp> */}
+          <Typography variant='h5' color='secondary' className={classes.grow}>
+            <StyledLink
+              to='/#Navigation'
+              style={{
+                position: "relative"
+              }}>
+              <IFLogo height={"50px"} />
+            </StyledLink>
+          </Typography>
+          {/* </Hidden> */}
           <NavMenu />
         </Toolbar>
       </AppBar>
