@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/Innovate-The-Future/precache-manifest.445f866ee17f1919c9b4af420aa90afb.js"
+  "/Innovate-The-Future/precache-manifest.65c5c8758071f0744d8a78f3ca077fb8.js"
 );
 
 workbox.clientsClaim();

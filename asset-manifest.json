@@ -7,7 +7,7 @@
   "static/js/1.1aae46ff.chunk.js.map": "/Innovate-The-Future/static/js/1.1aae46ff.chunk.js.map",
   "runtime~main.js": "/Innovate-The-Future/static/js/runtime~main.8a3954aa.js",
   "runtime~main.js.map": "/Innovate-The-Future/static/js/runtime~main.8a3954aa.js.map",
-  "static/media/index.css": "/Innovate-The-Future/static/media/roboto-latin-100italic.6232f43d.woff2",
+  "static/media/index.css": "/Innovate-The-Future/static/media/roboto-latin-300italic.210a7c78.woff",
   "static/media/vr-image.jpeg": "/Innovate-The-Future/static/media/vr-image.c4c6b622.jpeg",
   "static/media/business-man-image.jpg": "/Innovate-The-Future/static/media/business-man-image.e7f4b02f.jpg",
   "static/media/city-image-1.png": "/Innovate-The-Future/static/media/city-image-1.25a96dcd.png",
@@ -15,6 +15,6 @@
   "static/css/1.1ca39378.chunk.css.map": "/Innovate-The-Future/static/css/1.1ca39378.chunk.css.map",
   "static/css/main.ceb97a09.chunk.css.map": "/Innovate-The-Future/static/css/main.ceb97a09.chunk.css.map",
   "index.html": "/Innovate-The-Future/index.html",
-  "precache-manifest.445f866ee17f1919c9b4af420aa90afb.js": "/Innovate-The-Future/precache-manifest.445f866ee17f1919c9b4af420aa90afb.js",
+  "precache-manifest.65c5c8758071f0744d8a78f3ca077fb8.js": "/Innovate-The-Future/precache-manifest.65c5c8758071f0744d8a78f3ca077fb8.js",
   "service-worker.js": "/Innovate-The-Future/service-worker.js"
 }
