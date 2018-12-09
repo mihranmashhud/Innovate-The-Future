@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/Innovate-The-Future/precache-manifest.c8b885a9364197226d0b1a5488a0f0f2.js"
+  "if-innovatethefuture.ca/precache-manifest.91fb8a138fef0a9be16085129b9974d7.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/Innovate-The-Future/index.html", {
+workbox.routing.registerNavigationRoute("if-innovatethefuture.ca/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
