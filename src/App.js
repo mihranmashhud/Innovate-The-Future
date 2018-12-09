@@ -57,6 +57,11 @@ class App extends Component {
     return (
       <MuiThemeProvider theme={theme}>
         <Navigation />
+        <div
+          style={{
+            padding: "32px"
+          }}
+        />
         <Switch>
           <Route exact path='/' component={Main} />
           {/* <Route path='/About' component={About} />

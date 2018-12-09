@@ -32,11 +32,6 @@ function Navigation(props) {
   const { classes } = props;
   return (
     <div className={classes.root} id='Navigation'>
-      <div
-        style={{
-          padding: "32px"
-        }}
-      />
       <AppBar position='fixed'>
         <Toolbar>
           {/* <Hidden smDown>
