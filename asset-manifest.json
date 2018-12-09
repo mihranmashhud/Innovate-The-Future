@@ -1,13 +1,13 @@
 {
   "main.css": "/static/css/main.ceb97a09.chunk.css",
-  "main.js": "/static/js/main.bc54f590.chunk.js",
-  "main.js.map": "/static/js/main.bc54f590.chunk.js.map",
+  "main.js": "/static/js/main.07730aac.chunk.js",
+  "main.js.map": "/static/js/main.07730aac.chunk.js.map",
   "static/css/1.6e958216.chunk.css": "/static/css/1.6e958216.chunk.css",
   "static/js/1.6e0e2733.chunk.js": "/static/js/1.6e0e2733.chunk.js",
   "static/js/1.6e0e2733.chunk.js.map": "/static/js/1.6e0e2733.chunk.js.map",
   "runtime~main.js": "/static/js/runtime~main.229c360f.js",
   "runtime~main.js.map": "/static/js/runtime~main.229c360f.js.map",
-  "static/media/index.css": "/static/media/roboto-latin-900.19b7a0ad.woff2",
+  "static/media/index.css": "/static/media/roboto-latin-900italic.bc833e72.woff",
   "static/media/vr-image.jpeg": "/static/media/vr-image.c4c6b622.jpeg",
   "static/media/business-man-image.jpg": "/static/media/business-man-image.e7f4b02f.jpg",
   "static/media/city-image-1.png": "/static/media/city-image-1.25a96dcd.png",
@@ -15,6 +15,6 @@
   "static/css/main.ceb97a09.chunk.css.map": "/static/css/main.ceb97a09.chunk.css.map",
   "static/css/1.6e958216.chunk.css.map": "/static/css/1.6e958216.chunk.css.map",
   "index.html": "/index.html",
-  "precache-manifest.5b36cb6bee674aec81f82bd5004482b3.js": "/precache-manifest.5b36cb6bee674aec81f82bd5004482b3.js",
+  "precache-manifest.6d372fa9ac971f786bdc4a4257c413a5.js": "/precache-manifest.6d372fa9ac971f786bdc4a4257c413a5.js",
   "service-worker.js": "/service-worker.js"
 }
