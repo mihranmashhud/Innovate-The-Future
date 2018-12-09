@@ -31,7 +31,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "react-scripts build && cp ./src/CNAME public/ && gh-pages -d public --branch master"
+    "deploy": "react-scripts build && cp ./src/CNAME public/ && gh-pages -d"
   },
   "eslintConfig": {
     "extends": "react-app"
