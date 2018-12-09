@@ -17,5 +17,5 @@ const StyledLink = styled(Link)`
 `;
 
 export default props => (
-  <StyledLink scroll={el => el.scrollIntoView({ behavior: "smooth", block: "start" })} {...props} />
+  <StyledLink scroll={el => el.scrollIntoView({ behavior: "smooth", block: "nearest" })} {...props} />
 );

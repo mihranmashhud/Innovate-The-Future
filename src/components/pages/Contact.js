@@ -68,7 +68,7 @@ function Contact(props) {
               <Facebook />
             </IconButton>
 
-            <IconButton title='See our Instagram' color='white' href='https://www.instagram.com/innovatethefuture/'>
+            <IconButton title='See our Instagram' color='white' href='https://www.instagram.com/if_innovatethefuture/'>
               <Instagram />
             </IconButton>
 
