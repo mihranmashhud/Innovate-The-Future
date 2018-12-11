@@ -4,12 +4,7 @@ import { Switch, Route, withRouter } from "react-router-dom";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
 import Main from "./components/pages/Main";
-import About from "./components/pages/About";
-import Scope from "./components/pages/Scope";
-import Example from "./components/pages/Example";
-import Contact from "./components/pages/Contact";
 import SignIn from "./components/pages/SignIn";
-import SignUp from "./components/pages/SignUp";
 import Apply from "./components/pages/Apply";
 import requireAuth from "./components/auth/requireAuth";
 import { connect } from "react-redux";
@@ -64,12 +59,7 @@ class App extends Component {
         />
         <Switch>
           <Route exact path='/' component={Main} />
-          {/* <Route path='/About' component={About} />
-          <Route path='/Event-Scope' component={Scope} />
-          <Route path='/Example-Projects' component={Example} />
-          <Route path='/Contact-Us' component={Contact} /> */}
           <Route path='/Sign-In' component={SignIn} />
-          {/* <Route path='/Sign-Up' component={SignUp} /> */}
           <Route path='/Apply' component={requireAuth(Apply)} />
         </Switch>
       </MuiThemeProvider>
