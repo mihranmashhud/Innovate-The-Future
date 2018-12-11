@@ -35,9 +35,6 @@ const styles = theme => ({
   input: {
     display: "none"
   },
-  root: {
-    width: "100%"
-  },
   title: {
     margin: "auto",
     marginTop: "20px",
@@ -80,7 +77,7 @@ function Main(props) {
 
   return (
     <main className={classes.layout}>
-      <CssBaseline style={{ backgroundImage: "./static/media/IF-Banner.png" }} />
+      <CssBaseline />
       <Card className={classes.card} elevation={1} id='Home'>
         <Parallax
           bgImage={require(`./../../assets/city-image-1.png`)}
