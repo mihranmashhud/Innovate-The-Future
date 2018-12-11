@@ -7,10 +7,12 @@ import {
   ListItem,
   ListItemText,
   Checkbox,
-  Radio
+  Button
 } from "@material-ui/core";
 import PropTypes from "prop-types";
+import StyledLink from "./../Styled-Link";
 import { Parallax } from "react-parallax";
+import { CheckboxBlankCircle } from "mdi-material-ui";
 
 const styles = theme => ({
   layout: {
@@ -45,6 +47,10 @@ const styles = theme => ({
   },
   image: {
     height: "100%"
+  },
+  icon: {
+    marginRight: theme.spacing.unit,
+    color: theme.palette.secondary.main
   }
 });
 class Scope extends Component {
@@ -57,7 +63,6 @@ class Scope extends Component {
           <Typography variant="h2" color="secondary" className={classes.title}>
             Scope
           </Typography>
-
           {/* <Parallax bgImage={require("./../../assets/vr-image.jpeg")} bgWidth={"100%"} strength={200}>
             <div style={{ height: "300px" }} />
           </Parallax> */}
@@ -69,16 +74,24 @@ class Scope extends Component {
             What The Event Is Like
           </Typography>
           <Typography variant="body1" className={classes.text}>
-            HYPE IT UP! Cillum laboris aliquip id aliqua anim irure elit anim ex
-            eu deserunt cupidatat pariatur labore. Irure officia Lorem consequat
-            cillum nulla sint ad do qui dolore aute aute fugiat pariatur. Aute
-            ea ullamco esse ullamco ipsum sint sunt ad ipsum do officia qui
-            commodo. Ad non enim occaecat amet exercitation ex.
+            Business. Software. Food. Fun. Speakers. Prizes. Awards. Stun. and
+            Done.
+          </Typography>
+          <Typography variant="body1" className={classes.text}>
+            IF is about all of this and much much more!!
+          </Typography>
+          <Typography variant="body1" className={classes.text}>
+            Although a formal competition, IF is also very light-hearted. The
+            event itself will be held on <b>April 13th, 2019</b>. On the day of,
+            competitors give their business pitches and are marked by judges on
+            the criteria outlined within the student checklist. The actual
+            software programs are handed in <b>2 weeks beforehand</b>.
           </Typography>
 
           {/* <Parallax bgImage={require("./../../assets/developers-image.jpg")} bgWidth={"100%"} strength={200}>
             <div style={{ height: "300px" }} />
           </Parallax> */}
+
           <Typography
             variant="h3"
             color="secondary"
@@ -86,6 +99,9 @@ class Scope extends Component {
           >
             Student Requirements
           </Typography>
+          {/* <StyledLink to={require("./../../documents/IF Student Checklist.pdf")}>
+            <Button>GO TO FULL CHECKLIST</Button>
+          </StyledLink> */}
           <Typography variant="h4" className={classes.subtitle}>
             Pre-Presentation Checklist
           </Typography>
@@ -129,13 +145,8 @@ class Scope extends Component {
               <Checkbox checked={true} disableRipple />
               <ListItemText primary={"Explanation of product aspects"} />
             </ListItem>
-            <ListItem
-              style={{
-                marginLeft: "20px",
-                marginTop: "-20px"
-              }}
-            >
-              <Radio checked={true} disableRipple />
+            <ListItem style={{ marginLeft: "30pt", marginTop: "-20px" }}>
+              <CheckboxBlankCircle className={classes.icon} />
               <ListItemText
                 primary={
                   "Different features, the user interface, error protections etc."
@@ -150,13 +161,8 @@ class Scope extends Component {
                 }
               />
             </ListItem>
-            <ListItem
-              style={{
-                marginLeft: "20px",
-                marginTop: "-20px"
-              }}
-            >
-              <Radio checked={true} disableRipple />
+            <ListItem style={{ marginLeft: "30pt", marginTop: "-20px" }}>
+              <CheckboxBlankCircle className={classes.icon} />
               <ListItemText
                 primary={
                   "Will future revisions be released? Do you have plans for creating a series of products along with the one you developed?"
@@ -172,13 +178,13 @@ class Scope extends Component {
             Judge Duties
           </Typography>
           <Typography variant="body1" className={classes.text}>
-            Fugiat esse nulla consequat aute duis et sunt id. Nisi ad dolor amet
-            fugiat ipsum dolor nostrud labore. Aute reprehenderit consectetur
-            dolor magna nostrud sit voluptate do cillum sit est dolore sunt
-            duis. Quis do eiusmod fugiat tempor laborum exercitation sint
-            voluptate aliqua aliquip. Elit consectetur cillum consequat
-            adipisicing sit minim. Cillum enim eiusmod in ea exercitation
-            exercitation quis consequat aute.
+            Judging rubrics are not made available to students, they are only
+            released to the judges themselves. Instead, competitors should use
+            the student checklist to help guide them in the creation of their
+            project. If you are a working professional in the field of computer
+            science or business we encourage you to contact us at the email
+            found within our contact us section to become one of the judges for
+            this competition. We look forward to working with you!!
           </Typography>
         </Paper>
       </main>

@@ -48,6 +48,7 @@ const styles = theme => ({
   text: {
     width: "90%",
     margin: "auto",
+    marginBottom: "10pt",
     textAlign: "center"
   },
   card: {
@@ -79,11 +80,7 @@ function Main(props) {
 
   return (
     <main className={classes.layout}>
-      <CssBaseline
-        style={{
-          backgroundImage: "./static/media/IF-Banner.png"
-        }}
-      />
+      <CssBaseline style={{ backgroundImage: "./static/media/IF-Banner.png" }} />
       <Card className={classes.card} elevation={1} id='Home'>
         <Parallax
           bgImage={require(`./../../assets/city-image-1.png`)}
@@ -105,10 +102,16 @@ function Main(props) {
             Welcome to Innovate The Future
           </Typography>
           <Typography variant='h5' className={classes.text} paragraph={true}>
-            Incididunt et exercitation esse labore cupidatat nulla. Amet commodo amet anim dolore elit ea Lorem
-            adipisicing in. Cupidatat aliquip occaecat do consectetur fugiat ad mollit aliqua eu fugiat tempor amet esse
-            ipsum. Pariatur officia mollit eu commodo tempor voluptate. Do sint cillum quis aute sit consequat
-            incididunt.
+            Looking for collaboration? Entrepreneurial development? Software skills tests? Innovate the Future is Peel’s
+            new conference that will give you all of these. Student-run and student-led, we have what you’re looking
+            for. The IF competition aims to help students use their entrepreneurial and computer science skills to help
+            create meaningful software products that have real-world applications. As an IF candidate, you will
+            collaborate in small groups of 2-4 people to address an issue from today’s society, your own community or a
+            business venture to solve using said product. High school candidates of any grade and experience level are
+            welcomed to IF.
+          </Typography>
+          <Typography variant='h5' className={classes.text} paragraph={true}>
+            So what are you waiting for? Sign up, and become the ones who innovate the future!!
           </Typography>
         </CardContent>
         <CardActions>

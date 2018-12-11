@@ -36,7 +36,7 @@ class NavMenu extends React.Component {
     let logIn;
     let apply;
 
-    if (this.props.unauthenticated) {
+    if (this.props.authenticated) {
       apply = (
         <div>
           <Hidden smDown>
@@ -93,17 +93,17 @@ class NavMenu extends React.Component {
           <StyledLink to='/#Contact-Us'>
             <Button>Contact Us</Button>
           </StyledLink>
-          {this.props.unauthenticated && (
+          {!this.props.authenticated && (
             <StyledLink to='/Sign-In'>
               <Button color='secondary'>Sign In</Button>
             </StyledLink>
           )}
-          {!this.props.unauthenticated && (
+          {this.props.authenticated && (
             <StyledLink to='/Apply'>
               <Button color='secondary'>Your Application</Button>
             </StyledLink>
           )}
-          {!this.props.unauthenticated && (
+          {this.props.authenticated && (
             <Button onClick={this.signOut} color='secondary'>
               Sign Out
             </Button>
@@ -118,17 +118,18 @@ class NavMenu extends React.Component {
             <MenuIcon />
           </IconButton>
           <Menu id='nav-menu' anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={this.handleClose}>
-            {this.props.unauthenticated && (
-              <StyledLink to='/Sign-In'>
+            {!this.props.authenticated &&
+              {
+                /* <StyledLink to='/Sign-In'>
                 <MenuItem onClick={this.handleClose}>Sign In</MenuItem>
-              </StyledLink>
-            )}
-            {!this.props.unauthenticated && (
+              </StyledLink> */
+              }}
+            {this.props.authenticated && (
               <StyledLink to='/Apply'>
                 <MenuItem onClick={this.handleClose}>Your Application</MenuItem>
               </StyledLink>
             )}
-            {!this.props.unauthenticated && <MenuItem onClick={this.signOut}>Sign Out</MenuItem>}
+            {this.props.authenticated && <MenuItem onClick={this.signOut}>Sign Out</MenuItem>}
             <StyledLink to='/#About'>
               <MenuItem onClick={this.handleClose}>About</MenuItem>
             </StyledLink>
@@ -166,7 +167,7 @@ class NavMenu extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    unauthenticated: !Boolean(state.auth)
+    authenticated: state.auth == null ? false : Boolean(state.auth)
   };
 }
 
