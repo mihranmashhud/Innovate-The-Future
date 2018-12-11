@@ -81,11 +81,11 @@ class Scope extends Component {
           <Typography variant='h3' color='secondary' className={classes.subtitle}>
             Student Requirements
           </Typography>
-          <StyledLink to='/Checklist'>
+          {/* <StyledLink to='/Checklist'>
             <Button color='secondary' className={classes.button}>
               SEE FULL CHECKLIST
             </Button>
-          </StyledLink>
+          </StyledLink> */}
           <Typography variant='h4' className={classes.subtitle}>
             Pre-Presentation Checklist
           </Typography>
