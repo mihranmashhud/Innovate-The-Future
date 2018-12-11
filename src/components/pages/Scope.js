@@ -16,8 +16,7 @@ const styles = theme => ({
     marginTop: "20px"
   },
   paper: {
-    paddingTop: "20px",
-    paddingBottom: "20px"
+    padding: "20px"
   },
   title: {
     textAlign: "center",
@@ -26,12 +25,10 @@ const styles = theme => ({
   },
   subtitle: {
     textAlign: "left",
-    margin: "20px",
     fontSize: "25pt"
   },
   text: {
     fontSize: "20px",
-    margin: "20px",
     height: "100%",
     width: "auto",
     textAlign: "left"
@@ -42,6 +39,10 @@ const styles = theme => ({
   icon: {
     marginRight: theme.spacing.unit,
     color: theme.palette.secondary.main
+  },
+  button: {
+    marginTop: "20pt",
+    marginBottom: "20pt"
   }
 });
 class Scope extends Component {
@@ -80,9 +81,11 @@ class Scope extends Component {
           <Typography variant='h3' color='secondary' className={classes.subtitle}>
             Student Requirements
           </Typography>
-          {/* <StyledLink to={require("./../../documents/IF Student Checklist.pdf")}>
-            <Button>GO TO FULL CHECKLIST</Button>
-          </StyledLink> */}
+          <StyledLink to='/Checklist'>
+            <Button color='secondary' className={classes.button}>
+              SEE FULL CHECKLIST
+            </Button>
+          </StyledLink>
           <Typography variant='h4' className={classes.subtitle}>
             Pre-Presentation Checklist
           </Typography>
