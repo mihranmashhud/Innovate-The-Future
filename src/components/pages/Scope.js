@@ -81,7 +81,7 @@ class Scope extends Component {
           <Typography variant='h3' color='secondary' className={classes.subtitle}>
             Student Requirements
           </Typography>
-          <a href='https://drive.google.com/file/d/1V8lkVH43GbNQ43I9yUnNpk0uQxiKNjUa/view?usp=sharing'>
+          <a href='https://docs.google.com/document/d/1YD4P3uI1EKNbjF5KHf8CrrlKL0DDBoSUtJLmYml4KMY/edit?usp=sharing'>
             <Button color='secondary' className={classes.button}>
               SEE FULL CHECKLIST
             </Button>
