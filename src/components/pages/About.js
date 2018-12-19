@@ -63,7 +63,7 @@ class About extends Component {
             Candidates of any grade and experience level are welcomed to IF. There are no limitations on the complexity
             or skills you use for your product, even the programming language is up to you. The software you create to
             address your problem will be due several weeks before the competition date, at which point it will be
-            evaluated by our panel of judges..
+            evaluated by our panel of judges.
           </Typography>
           <Parallax bgImage={require("./../../assets/business-man-image.jpg")} bgWidth={"100%"} strength={200}>
             <div style={{ height: "300px" }} />
@@ -73,7 +73,7 @@ class About extends Component {
             minutes, you have to convince a mock panel of investors of the value and use of your product and why your
             product is worth investing in. Your team will present a short business pitch, explaining the product’s
             characteristics and your target market, and establishing a marketing plan outlining the future for your
-            product. What are you waiting for? Sign up, and become the ones to innovate the future!!
+            product. What are you waiting for? Sign up, and become the ones to innovate the future!
           </Typography>
         </Paper>
       </main>
