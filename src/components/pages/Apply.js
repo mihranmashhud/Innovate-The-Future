@@ -376,6 +376,7 @@ class Apply extends Component {
                 onChange={this.handleChange("rankExperience")}
                 value={this.state.rankExperience.value}
                 readOnly={submitted}
+                required
                 maxLength={1}
               />
             </Grid>
@@ -463,6 +464,7 @@ class Apply extends Component {
               onChange={this.handleChange("rankPresentation")}
               value={this.state.rankPresentation.value}
               readOnly={submitted}
+              required
               maxLength={1}
             />
           </Grid>
@@ -527,6 +529,7 @@ class Apply extends Component {
               onChange={this.handleChange("rankReports")}
               value={this.state.rankReports.value}
               readOnly={submitted}
+              required
               maxLength={1}
             />
           </Grid>
