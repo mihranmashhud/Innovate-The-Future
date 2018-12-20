@@ -11,6 +11,11 @@ import Grid from "@material-ui/core/Grid";
 import CloseIcon from "@material-ui/icons/Close";
 import Snackbar from "@material-ui/core/Snackbar";
 import IconButton from "@material-ui/core/IconButton";
+import Dialog from "@material-ui/core/Dialog";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogTitle from "@material-ui/core/DialogTitle";
 
 import { connect } from "react-redux";
 import { loadUserApplication, updateUserApplication } from "../../actions/index";
@@ -154,8 +159,11 @@ class Apply extends Component {
         value: "",
         required: true
       },
-      hasClickedSave: false,
-      required: false
+      notForm: {
+        hasClickedSave: false,
+        required: false,
+        dialogOpen: false
+      }
     };
   }
 
@@ -174,6 +182,7 @@ class Apply extends Component {
   componentDidUpdate(prevProps) {
     if (prevProps.application !== this.props.application) {
       this.replaceInput();
+      this.checkRequired();
     }
   }
 
@@ -205,49 +214,83 @@ class Apply extends Component {
     let questions = [];
     for (const id in this.state) {
       let value = this.state[id];
-      if (id != "hasClickedSave" || id != "required") {
+      if (id != "notForm") {
         questions.push(value);
       }
     }
-    console.log(this.props.application.submitted);
     this.props.updateUserApplication(this.props.user, questions, true);
+    this.handleDialogClose();
   };
 
   saveApplication = () => {
     let questions = [];
     for (const id in this.state) {
       let value = this.state[id];
-      if (id != "hasClickedSave" || id != "required") {
+      if (id != "notForm") {
         questions.push(value);
       }
     }
     this.props.updateUserApplication(this.props.user, questions);
-    this.setState({ hasClickedSave: true });
+    this.setState({
+      notForm: {
+        hasClickedSave: true
+      }
+    });
   };
 
   handleSnackbarClose = () => {
-    this.setState({ hasClickedSave: false });
+    this.setState({
+      notForm: {
+        hasClickedSave: true
+      }
+    });
   };
 
-  handleChange = id => event => {
+  checkRequired = () => {
     let required = true;
-    for (const id in this.state) {
-      if (id != "hasClickedSave" && id != "required") {
-        if (this.state[id].required == true && this.state[id].value == "") {
+    for (const id1 in this.state) {
+      if (id1 != "notForm") {
+        if (this.state[id1].required == true && this.state[id1].value == "") {
           required = false;
           break;
         }
       }
     }
-    this.setState({ required: required });
+    this.setState({
+      notForm: {
+        required: required
+      }
+    });
+  };
+
+  handleChange = id => event => {
     event.persist();
-    this.setState({ [id]: { label: this.state[id].label, value: event.target.value } });
+    if (id != null) {
+      this.setState({ [id]: { label: this.state[id].label, value: event.target.value } });
+    }
+    this.checkRequired();
+  };
+
+  handleDialogOpen = () => {
+    this.setState({
+      notForm: {
+        dialogOpen: true
+      }
+    });
+  };
+
+  handleDialogClose = () => {
+    this.setState({
+      notForm: {
+        dialogOpen: false
+      }
+    });
   };
 
   render() {
     const { classes } = this.props;
     let submitted = this.props.application ? this.props.application.submitted : false;
-    let { required } = this.state;
+    let { required } = this.state.notForm;
 
     return (
       <div className={classes.layout} align='center'>
@@ -365,7 +408,7 @@ class Apply extends Component {
               </Typography>
             </Grid>
             <Grid item xs={12}>
-              <Typography variant='h3' color='body1' className={classes.text}>
+              <Typography variant='body1' className={classes.text}>
                 Rank your experience with software (programs/computer usage) on a scale of 1 - 5:
               </Typography>
             </Grid>
@@ -598,7 +641,7 @@ class Apply extends Component {
                 variant='contained'
                 color='secondary'
                 className={classes.button}
-                onClick={this.submitApplication}
+                onClick={this.handleDialogOpen}
                 disabled={submitted || !required}>
                 Submit Application
               </Button>
@@ -607,7 +650,7 @@ class Apply extends Component {
         </Card>
         <Snackbar
           anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
-          open={this.state.hasClickedSave}
+          open={this.state.notForm.hasClickedSave}
           autoHideDuration={6000}
           onClose={this.handleSnackbarClose}
           ContentProps={{ "aria-describedby": "message-id" }}
@@ -618,6 +661,27 @@ class Apply extends Component {
             </IconButton>
           ]}
         />
+        <Dialog
+          open={this.state.notForm.dialogOpen}
+          onClose={this.handleDialogClose}
+          aria-labelledby='alert-dialog-title'
+          aria-describedby='alert-dialog-description'>
+          <DialogTitle id='alert-dialog-title'>{"Are you sure you want to submit your application?"}</DialogTitle>
+          <DialogContent>
+            <DialogContentText id='alert-dialog-description' color='secondary'>
+              Make sure to that all parts of the application have been completed properly and you are sure of your
+              answers.
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={this.handleDialogClose} color='secondary'>
+              Don't Submit
+            </Button>
+            <Button onClick={this.submitApplication} color='secondary' autoFocus>
+              Submit Application
+            </Button>
+          </DialogActions>
+        </Dialog>
       </div>
     );
   }
