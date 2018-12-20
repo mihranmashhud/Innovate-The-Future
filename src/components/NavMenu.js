@@ -118,12 +118,11 @@ class NavMenu extends React.Component {
             <MenuIcon />
           </IconButton>
           <Menu id='nav-menu' anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={this.handleClose}>
-            {!this.props.authenticated &&
-              {
-                /* <StyledLink to='/Sign-In'>
+            {!this.props.authenticated && (
+              <StyledLink to='/Sign-In'>
                 <MenuItem onClick={this.handleClose}>Sign In</MenuItem>
-              </StyledLink> */
-              }}
+              </StyledLink>
+            )}
             {this.props.authenticated && (
               <StyledLink to='/Apply'>
                 <MenuItem onClick={this.handleClose}>Your Application</MenuItem>
