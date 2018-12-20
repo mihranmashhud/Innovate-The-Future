@@ -161,7 +161,7 @@ class Apply extends Component {
       },
       notForm: {
         hasClickedSave: false,
-        required: false,
+        required: true,
         dialogOpen: false
       }
     };
@@ -182,7 +182,9 @@ class Apply extends Component {
   componentDidUpdate(prevProps) {
     if (prevProps.application !== this.props.application) {
       this.replaceInput();
-      this.checkRequired();
+      setTimeout(() => {
+        this.checkRequired();
+      }, 1000);
     }
   }
 
@@ -208,6 +210,7 @@ class Apply extends Component {
         }
       }
     }
+    this.checkRequired();
   };
 
   submitApplication = () => {
