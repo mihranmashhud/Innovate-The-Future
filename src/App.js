@@ -6,7 +6,7 @@ import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import Main from "./components/pages/Main";
 import SignIn from "./components/pages/SignIn";
 import Apply from "./components/pages/Apply";
-// import Submitted from "./components/pages/Submitted";
+import Submited from "./components/pages/Submited";
 import requireAuth from "./components/auth/requireAuth";
 import { connect } from "react-redux";
 import { fetchUser } from "./actions";
@@ -62,7 +62,7 @@ class App extends Component {
           <Route exact path='/' component={Main} />
           <Route path='/Sign-In' component={SignIn} />
           <Route path='/Apply' component={requireAuth(Apply)} />
-          {/* <Route path='/Submitted' component={Submitted} /> */}
+          <Route path='/Submited' component={Submited} />
         </Switch>
       </MuiThemeProvider>
     );
