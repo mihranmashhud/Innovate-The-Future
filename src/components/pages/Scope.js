@@ -62,9 +62,11 @@ class Scope extends Component {
             What The Event Is Like
           </Typography>
           <Typography variant='body1' className={classes.text}>
+            <br />
             Business. Software. Food. Fun. Speakers. Prizes. Awards. Stun. and Done.
           </Typography>
           <Typography variant='body1' className={classes.text}>
+            <br />
             IF is about all of this and much much more!!
           </Typography>
           <Typography variant='body1' className={classes.text}>
@@ -79,11 +81,12 @@ class Scope extends Component {
           </Parallax> */}
 
           <Typography variant='h3' color='secondary' className={classes.subtitle}>
+            <br />
             Student Requirements
           </Typography>
           <a href='https://drive.google.com/file/d/1xA7oh9ksUYoz2USBNFW-J6A3ZQ2CJIaz/view?usp=sharing'>
             <Button color='secondary' className={classes.button}>
-              SEE FULL CHECKLIST
+              SEE FULL SCOPE
             </Button>
           </a>
           <Typography variant='h4' className={classes.subtitle}>
