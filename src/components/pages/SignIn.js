@@ -213,7 +213,7 @@ class SignIn extends Component {
                   Sign In With Facebook
                 </Typography>
               </Button>
-              <Button
+              {/* <Button
                 onClick={this.props.signInWithTwitter}
                 className={classes.button}
                 variant='outlined'
@@ -222,7 +222,7 @@ class SignIn extends Component {
                 <Typography variant='h5' className={classes.buttonText}>
                   Sign In With Twitter
                 </Typography>
-              </Button>
+              </Button> */}
               <Typography variant='body1' color='textPrimary' className={classes.text}>
                 Need to sign up? Using one of the auth providers above will do just that!
               </Typography>

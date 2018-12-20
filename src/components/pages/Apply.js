@@ -16,6 +16,7 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
+import StyledLink from "../Styled-Link";
 
 import { connect } from "react-redux";
 import { loadUserApplication, updateUserApplication } from "../../actions/index";
@@ -251,9 +252,11 @@ class Apply extends Component {
 
   checkRequired = () => {
     let required = true;
-    for (const id1 in this.state) {
-      if (id1 != "notForm") {
-        if (this.state[id1].required == true && this.state[id1].value == "") {
+    for (const id in this.state) {
+      let value = this.state[id].value;
+      console.log(value);
+      if (id != "notForm") {
+        if (this.state[id].required == true && value == "") {
           required = false;
           break;
         }
@@ -268,10 +271,11 @@ class Apply extends Component {
 
   handleChange = id => event => {
     event.persist();
+    this.checkRequired();
+
     if (id != null) {
       this.setState({ [id]: { label: this.state[id].label, value: event.target.value } });
     }
-    this.checkRequired();
   };
 
   handleDialogOpen = () => {
@@ -680,9 +684,11 @@ class Apply extends Component {
             <Button onClick={this.handleDialogClose} color='secondary'>
               Don't Submit
             </Button>
-            <Button onClick={this.submitApplication} color='secondary' autoFocus>
-              Submit Application
-            </Button>
+            <StyledLink to='/Submited'>
+              <Button onClick={this.submitApplication} color='secondary' autoFocus>
+                Submit Application
+              </Button>
+            </StyledLink>
           </DialogActions>
         </Dialog>
       </div>
