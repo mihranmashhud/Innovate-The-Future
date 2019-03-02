@@ -93,7 +93,7 @@ class NavMenu extends React.Component {
           <StyledLink to='/#Contact-Us'>
             <Button>Contact Us</Button>
           </StyledLink>
-          {!this.props.authenticated && (
+          {/* {!this.props.authenticated && (
             <StyledLink to='/Sign-In'>
               <Button color='secondary'>Sign In</Button>
             </StyledLink>
@@ -107,7 +107,7 @@ class NavMenu extends React.Component {
             <Button onClick={this.signOut} color='secondary'>
               Sign Out
             </Button>
-          )}
+          )} */}
         </Hidden>
         <Hidden mdUp>
           <IconButton

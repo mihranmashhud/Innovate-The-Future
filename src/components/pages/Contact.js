@@ -53,7 +53,7 @@ function Contact(props) {
           <Typography className={classes.pos1} variant='h6' component='h2'>
             if.innovatethefuture@gmail.com
           </Typography>
-          <Typography className={classes.pos} variant='h4' color='secondary'>
+          {/* <Typography className={classes.pos} variant='h4' color='secondary'>
             Address
           </Typography>
           <Typography className={classes.pos1} variant='h5' component='h2'>
@@ -75,7 +75,7 @@ function Contact(props) {
             <IconButton title='See our Twitter' color='white' href='https://www.twitter.com/IFInnovatetheF1'>
               <Twitter />
             </IconButton>
-          </div>
+          </div> */}
         </CardContent>
       </Card>
     </div>
