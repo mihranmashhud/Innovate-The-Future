@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Document, Page } from "react-pdf";
 import { pdfjs } from "react-pdf";
 
-import { Card, CssBaseline, Fab, withStyles, Hidden } from "@material-ui/core";
+import { Card, CssBaseline, Button, withStyles, Hidden } from "@material-ui/core";
 import { ArrowLeft, ArrowRight } from "mdi-material-ui";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
@@ -112,12 +112,12 @@ class Checklist extends Component {
             Page {pageNumber} of {numPages}
           </Typography> */}
         </Card>
-        <Fab className={classes.leftFab} color='secondary' disabled={pageNumber <= 1} onClick={this.prevPage}>
+        <Button variant="fab" className={classes.leftFab} color='secondary' disabled={pageNumber <= 1} onClick={this.prevPage}>
           <ArrowLeft />
-        </Fab>
-        <Fab className={classes.rightFab} color='secondary' disabled={pageNumber >= numPages} onClick={this.nextPage}>
+        </Button>
+        <Button variant="fab" className={classes.rightFab} color='secondary' disabled={pageNumber >= numPages} onClick={this.nextPage}>
           <ArrowRight />
-        </Fab>
+        </Button>
       </main>
     );
   }

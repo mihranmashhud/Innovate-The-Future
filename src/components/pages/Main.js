@@ -10,7 +10,6 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import IFLogo from "./Home/IFLogo";
-import { Fab } from "@material-ui/core";
 import { ArrowUp } from "mdi-material-ui";
 import Hidden from "@material-ui/core/Hidden";
 import { connect } from "react-redux";
@@ -140,9 +139,9 @@ function Main(props) {
       <Scope />
       <Contact />
       <StyledLink to='/#Navigation'>
-        <Fab color='secondary' aria-label='Go To Top' className={classes.fab}>
+        <Button variant="fab" color='secondary' aria-label='Go To Top' className={classes.fab}>
           <ArrowUp />
-        </Fab>
+        </Button>
       </StyledLink>
     </main>
   );

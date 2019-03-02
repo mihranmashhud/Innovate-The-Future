@@ -155,12 +155,26 @@ class Scope extends Component {
             Judge Duties
           </Typography>
           <Typography variant='body1' className={classes.text}>
+            <br/>
             Judging rubrics are not made available to students, they are only released to the judges themselves.
             Instead, competitors should use the student checklist to help guide them in the creation of their project.
             If you are a working professional in the field of computer science or business we encourage you to contact
             us at the email found within our contact us section to become one of the judges for this competition. We
             look forward to working with you!!
           </Typography>
+          <Typography variant='h3' color='secondary' className={classes.subtitle}>
+            <br/>
+            Example Projects
+          </Typography>
+          <Typography variant='body1' className={classes.text}>
+            <br/>
+            Here is a link to information about examplars that you can use to get an idea of what you should focus on.
+          </Typography>
+          <a href='https://drive.google.com/file/d/10SdI8mPVEJN08wKdRmY2DQJf3eQoTg3l/view?usp=sharing'>
+            <Button color='secondary' className={classes.button}>
+              SEE EXEMPLARS
+            </Button>
+          </a>
         </Paper>
       </main>
     );
